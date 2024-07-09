@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "DaxlinePro";
+  src: url("../fonts/daxlinepro_bold.eot");
+  src: local("☺"), url("../fonts/daxlinepro_bold.woff") format("woff"), url("../fonts/daxlinepro_bold.woff2") format("woff2"), url("../fonts/daxlinepro_bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Regular.eot");
+  src: local("☺"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff2"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-SemiBold.eot");
+  src: local("☺"), url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "OpenSans";
+  font-size: 62.5%;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  font-size: 10px;
+  color: #2A2A2A;
+}
+
+a {
+  color: unset;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.container {
+  width: 144rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 48em) {
+  .container {
+    padding: 0 4rem;
+    width: 100%;
+  }
+}
+.title {
+  font-family: "DaxlinePro";
+  font-size: 6.4rem;
+  line-height: 113%;
+  font-weight: 700;
+}
+
+.title-m {
+  font-family: "DaxlinePro";
+  font-size: 4.8rem;
+  line-height: 113%;
+  font-weight: 700;
+}
+
+.title-s {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.title-xs {
+  font-size: 2rem;
+}
+
+.text {
+  font-size: 1.6rem;
+}
+
+.text-s {
+  font-size: 1.4rem;
+}
+
+.btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  border-radius: 5rem;
+}
+
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  border-radius: 5rem;
+  width: 22.7rem;
+  padding: 1.1rem 2rem;
+  font-size: 2rem;
+  background: linear-gradient(65deg, #E7214D, #C20C35);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(25deg, #C20C35, #E7214D);
+}
+
+.btn-secondary {
+  padding: 1.2rem 2.9rem;
+  border: 0.1rem solid #E7214D;
+  color: #E7214D;
+  display: flex;
+  justify-content: center;
+  border-radius: 5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #E7214D;
+  color: #FFFFFF;
+}
+
+.btn svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.btn:hover svg path {
+  fill: #E7214D;
+}
+
+.btn.disabled svg path {
+  fill: #8F7D83;
+}
+
+.link {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.link:hover {
+  color: #E7214D;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.header__logo {
+  width: 9.3rem;
+  margin-right: 3rem;
+}
+
+.header__menu {
+  width: 100%;
+}
+
+.header__menu-list {
+  display: flex;
+  gap: 3rem;
+}
+
+.header__menu-item {
+  padding: 0 0.4rem;
+}
+
+.hero {
+  background-image: url(../img/hero-img.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.hero__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 50.3rem 0 20.7rem;
+}
+
+.hero__inner-content .title {
+  width: 79rem;
+  margin-bottom: 1.2rem;
+  color: #FFFFFF;
+}
+
+.hero__inner-content .text {
+  width: 34.5rem;
+  color: #FFFFFF;
+}
+
+.messengers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  width: 34rem;
+  margin-top: 6rem;
+  padding: 3.4rem 2.3rem;
+  background: #F2EFF0;
+  border-radius: 1rem;
+}
+
+.messengers .title-xs {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}

@@ -1,4 +1,65 @@
-header {
-  padding: 15px 5px;
-  color: #c81a6b;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  &__logo {
+    width: 9.3rem;
+    margin-right: 3rem;
+  }
+
+  &__menu{
+    width: 100%;
+    &-list {
+      display: flex;
+      gap: 3rem;
+    }
+
+    &-item {
+      padding: 0 0.4rem;
+    }
+  }
+}
+
+.hero {
+  background-image: url(../img/hero-img.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 50.3rem 0 20.7rem;
+
+    &-content {
+      & .title {
+        width: 79rem;
+        margin-bottom: 1.2rem;
+        color: $white;
+      }
+
+      & .text {
+        width: 34.5rem;
+        color: $white;
+      }
+    }
+  }
+}
+
+.messengers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  width: 34rem;
+  margin-top: 6rem;
+  padding: 3.4rem 2.3rem;
+  background: $grey-light;
+  border-radius: 1rem;
+
+  & .title-xs {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
 }
