@@ -15,46 +15,13 @@ import webp from 'gulp-webp';
 import { deleteAsync } from 'del';
 import fileinclude from 'gulp-file-include';
 import imagemin from 'gulp-imagemin';
-// const server = require("browser-sync").create();
-// const concat = require('gulp-concat');
-// const babel = require('gulp-babel');
-// const webp = require("gulp-webp");
-// var plumber = require("gulp-plumber");
-// var rename = require("gulp-rename");
-// var sass = require("gulp-sass");
-// var postcss = require("gulp-postcss");
-// var autoprefixer = require("autoprefixer");
-// var csso = require("gulp-csso");
-// var del = require("del");
 
 const server = browserSync.create();
 const sass = gulpSass(dartSass);
 
 export const del = () => {
-  return deleteAsync(['build']);
+  return deleteAsync(['dist']);
 }
-
-// function scripts() {
-// 	return src([ // Берем файлы из источников
-// 		'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
-// 		'src/js/**/*.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-// 		])
-// 	.pipe(concat('index.js')) // Конкатенируем в один файл
-// 	.pipe(babel({
-//     presets: ['@babel/env']
-//   })) // Сжимаем JavaScript
-// 	.pipe(dest('build/js/')) // Выгружаем готовый файл в папку назначения
-// 	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
-// }
-
-
-// function browserSync() {
-// 	server.init({
-// 		server: { baseDir: 'src/' },
-// 		notify: false,
-// 		online: true
-// 	})
-// }
 
 gulp.task("html", function () {
   return gulp.src('src/*.html')
@@ -62,22 +29,24 @@ gulp.task("html", function () {
     prefix: '@@',
     basepath: '@file'
   }))
-  .pipe(gulp.dest('./build/'));
+  .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task("del", function () {
-  return del(["build"]);
+  return del(["dist"]);
 });
 
 gulp.task("css", function () {
-  return gulp.src("src/sass/style.scss")
+  return gulp.src(["src/css/*.css",
+    "src/sass/style.scss"])
     .pipe(plumber())
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(server.stream());
 });
 
@@ -90,7 +59,7 @@ gulp.task("js", function () {
 	.pipe(babel({
     presets: ['@babel/env']
   }))
-  .pipe(gulp.dest("build/js"))
+  .pipe(gulp.dest("dist/js"))
         .pipe(server.stream());
 });
 
@@ -98,14 +67,14 @@ gulp.task("img", function () {
   return gulp.src("src/assets/img/*.*")
     .pipe(imagemin())
     .pipe(webp())
-      .pipe(gulp.dest("build/img"))
+      .pipe(gulp.dest("dist/img"))
       .pipe(server.stream());
 });
 
 
 gulp.task("server", function () {
   server.init({
-    server: "build/",
+    server: "dist/",
     notify: false,
     open: true,
     cors: true,
@@ -126,7 +95,7 @@ gulp.task("copy", function () {
   ], {
     base: "src/assets"
   })
-  .pipe(gulp.dest("build"));
+  .pipe(gulp.dest("dist"));
 });
 
 gulp.task("refresh", function(done) {
