@@ -49,8 +49,12 @@ button {
 
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+}
+
+section {
+  margin-bottom: 10.8rem;
 }
 
 .container {
@@ -76,33 +80,33 @@ img {
 
 .title {
   font-family: "DaxlinePro";
-  font-size: 6.4rem;
+  font-size: 5.8rem;
   line-height: 113%;
   font-weight: 700;
 }
 
 .title-m {
   font-family: "DaxlinePro";
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   line-height: 113%;
   font-weight: 700;
 }
 
 .title-s {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .title-xs {
-  font-size: 2rem;
-}
-
-.text {
   font-size: 1.6rem;
 }
 
-.text-s {
+.text {
   font-size: 1.4rem;
+}
+
+.text-s {
+  font-size: 1.2rem;
 }
 
 
@@ -120,7 +124,7 @@ img {
     border-radius: 5rem;
     width: 22.7rem;
     padding: 1.1rem 2rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     background: linear-gradient(65deg, $red, #C20C35);
     color: $white;
     border: none;
@@ -138,6 +142,7 @@ img {
     display: flex;
     justify-content: center;
     border-radius: 5rem;
+    font-size: 1.6rem;
     cursor: pointer;
     background-color: transparent;
 
@@ -150,6 +155,10 @@ img {
   & svg {
     width: 4rem;
     height: 4rem;
+  }
+
+  &.arr-r {
+    transform: rotate(180deg);
   }
 
   &:hover {
@@ -166,11 +175,10 @@ img {
 }
 
 .link {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 600;
 
   &:hover {
     color: $red;
   }
 }
-

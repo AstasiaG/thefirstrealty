@@ -23,8 +23,10 @@
 }
 
 .hero {
-  background-image: url(../img/hero-img.png);
-  background-position: center center;
+  background-image: url(../img/hero-img.webp);
+  mask-image: linear-gradient(rgb(0 0 0 / 100%) 80%, transparent);
+  background-position: top center;
+  background-size: cover;
   background-repeat: no-repeat;
 
   &__inner {
@@ -34,7 +36,7 @@
 
     &-content {
       & .title {
-        width: 79rem;
+        width: 70rem;
         margin-bottom: 1.2rem;
         color: $white;
       }
@@ -52,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1.3rem;
-  width: 34rem;
+  width: 30rem;
   margin-top: 6rem;
   padding: 3.4rem 2.3rem;
   background: $grey-light;
@@ -61,5 +63,83 @@
   & .title-xs {
     margin-bottom: 1.5rem;
     text-align: center;
+  }
+}
+
+.projects {
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 46.6rem;
+    box-shadow: 0px 1px 5px $grey-dark;
+    border-radius: 1rem;
+
+    &-image {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &-title {
+      position: absolute;
+      z-index: 2;
+      top: 22.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      width: 100%;
+      height: 6.4rem;
+      padding: 1rem 3.8rem;
+      background-color: $grey-dark;
+      color: $white;
+    }
+
+    &-name {
+      width: 26.5rem;
+      align-self: center;
+    }
+
+    &-bottom {
+      padding: 1.5rem 3.8rem 2.5rem;
+    }
+
+    &-location {
+      display: flex;
+      justify-content: space-between;
+      color: $grey;
+      margin-bottom: 1.6rem;
+    }
+
+    &-description {
+      width: 33.2rem;
+
+      &--wrap {
+        display: flex;
+        justify-content: space-between;
+
+        & .btn {
+          margin-right: -0.7rem;
+           & svg path {
+            fill: $red;
+           }
+
+           &:hover {
+            & svg path {
+              fill: $black;
+             }
+           }
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin: 4rem auto 0;
   }
 }

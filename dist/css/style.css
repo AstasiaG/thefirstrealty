@@ -60,9 +60,13 @@ button {
 
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+section {
+  margin-bottom: 10.8rem;
 }
 
 .container {
@@ -83,33 +87,33 @@ img {
 }
 .title {
   font-family: "DaxlinePro";
-  font-size: 6.4rem;
+  font-size: 5.8rem;
   line-height: 113%;
   font-weight: 700;
 }
 
 .title-m {
   font-family: "DaxlinePro";
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   line-height: 113%;
   font-weight: 700;
 }
 
 .title-s {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .title-xs {
-  font-size: 2rem;
-}
-
-.text {
   font-size: 1.6rem;
 }
 
-.text-s {
+.text {
   font-size: 1.4rem;
+}
+
+.text-s {
+  font-size: 1.2rem;
 }
 
 .btn {
@@ -126,7 +130,7 @@ img {
   border-radius: 5rem;
   width: 22.7rem;
   padding: 1.1rem 2rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   background: linear-gradient(65deg, #E7214D, #C20C35);
   color: #FFFFFF;
   border: none;
@@ -144,6 +148,7 @@ img {
   display: flex;
   justify-content: center;
   border-radius: 5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   background-color: transparent;
 }
@@ -158,6 +163,10 @@ img {
   height: 4rem;
 }
 
+.btn.arr-r {
+  transform: rotate(180deg);
+}
+
 .btn:hover svg path {
   fill: #E7214D;
 }
@@ -167,7 +176,7 @@ img {
 }
 
 .link {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -201,8 +210,11 @@ img {
 }
 
 .hero {
-  background-image: url(../img/hero-img.png);
-  background-position: center center;
+  background-image: url(../img/hero-img.webp);
+  -webkit-mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);
+          mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);
+  background-position: top center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -213,7 +225,7 @@ img {
 }
 
 .hero__inner-content .title {
-  width: 79rem;
+  width: 70rem;
   margin-bottom: 1.2rem;
   color: #FFFFFF;
 }
@@ -228,7 +240,7 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 1.3rem;
-  width: 34rem;
+  width: 30rem;
   margin-top: 6rem;
   padding: 3.4rem 2.3rem;
   background: #F2EFF0;
@@ -238,4 +250,80 @@ img {
 .messengers .title-xs {
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+.projects__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.projects__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 46.6rem;
+  box-shadow: 0px 1px 5px rgba(42, 42, 42, 0.7);
+  border-radius: 1rem;
+}
+
+.projects__card-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.projects__card-title {
+  position: absolute;
+  z-index: 2;
+  top: 22.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  height: 6.4rem;
+  padding: 1rem 3.8rem;
+  background-color: rgba(42, 42, 42, 0.7);
+  color: #FFFFFF;
+}
+
+.projects__card-name {
+  width: 26.5rem;
+  align-self: center;
+}
+
+.projects__card-bottom {
+  padding: 1.5rem 3.8rem 2.5rem;
+}
+
+.projects__card-location {
+  display: flex;
+  justify-content: space-between;
+  color: #8F7D83;
+  margin-bottom: 1.6rem;
+}
+
+.projects__card-description {
+  width: 33.2rem;
+}
+
+.projects__card-description--wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects__card-description--wrap .btn {
+  margin-right: -0.7rem;
+}
+
+.projects__card-description--wrap .btn svg path {
+  fill: #E7214D;
+}
+
+.projects__card-description--wrap .btn:hover svg path {
+  fill: #2A2A2A;
+}
+
+.projects__button {
+  margin: 4rem auto 0;
 }
