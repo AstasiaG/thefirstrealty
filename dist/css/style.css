@@ -353,3 +353,53 @@ section {
 .residence__btn {
   margin-top: 8rem;
 }
+
+.about__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__content {
+  width: 83.5rem;
+}
+
+.about__title {
+  margin-bottom: 6.6rem;
+}
+
+.about__desc {
+  width: 58rem;
+  margin-bottom: 4rem;
+}
+
+.about__advantages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.about__advantages-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 26.5rem;
+  padding: 2rem 1.5rem;
+  background-color: #F2EFF0;
+  border-radius: 1rem;
+}
+
+.about__advantages-img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.about__advantages-text {
+  text-align: center;
+}
+
+.about__slider {
+  width: 58.9rem;
+  border-radius: 1rem;
+}
