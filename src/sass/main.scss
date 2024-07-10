@@ -143,3 +143,53 @@
     margin: 4rem auto 0;
   }
 }
+
+
+// .apart-slider {
+
+//   &__inner {
+//     background-color: $grey-light;
+//     border-radius: 1rem;
+//     padding: 3.8rem 4.8rem;
+//   }
+
+//   &__content {
+//   }
+
+//   // .apart-slider__wrapper
+
+//   &__wrapper {
+//   }
+
+//   // .apart-slider__slide
+
+//   &__slide {
+//   }
+// }
+
+
+.residence {
+  &__inner {
+    padding: 7rem 3.8rem;
+    border-radius: 1rem;
+    background-color: $grey-light;
+    background-image: url(../img/residence.webp);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+  &__text {
+    width: 53rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    margin-bottom: 1.3rem;
+    &-s {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__btn {
+    margin-top: 8rem;
+  }
+}

@@ -52,15 +52,16 @@ gulp.task("css", function () {
 
 gulp.task("js", function () {
   return gulp.src([ // Берем файлы из источников
-    		'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
-    		'src/js/index.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-    		])
-  .pipe(concat('index.js')) // Конкатенируем в один файл
-	.pipe(babel({
-    presets: ['@babel/env']
-  }))
-  .pipe(gulp.dest("dist/js"))
-        .pipe(server.stream());
+    // 'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+    // 'node_modules/swiper/swiper-bundle.min.js',
+    'src/js/index.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+    ])
+    .pipe(concat('index.js')) // Конкатенируем в один файл
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(gulp.dest("dist/js"))
+    .pipe(server.stream());
 });
 
 gulp.task("img", function () {

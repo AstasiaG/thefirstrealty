@@ -327,3 +327,29 @@ section {
 .projects__button {
   margin: 4rem auto 0;
 }
+
+.residence__inner {
+  padding: 7rem 3.8rem;
+  border-radius: 1rem;
+  background-color: #F2EFF0;
+  background-image: url(../img/residence.webp);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.residence__text {
+  width: 53rem;
+  margin-bottom: 2.5rem;
+}
+
+.residence__title {
+  margin-bottom: 1.3rem;
+}
+
+.residence__title-s {
+  margin-bottom: 0.8rem;
+}
+
+.residence__btn {
+  margin-top: 8rem;
+}
