@@ -174,6 +174,7 @@
     border-radius: 1rem;
     background-color: $grey-light;
     background-image: url(../img/residence.webp);
+    background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
   }
@@ -185,7 +186,7 @@
   &__title {
     margin-bottom: 1.3rem;
     &-s {
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -217,8 +218,6 @@
     margin-bottom: 4rem;
   }
 
-  // .about__advantages
-
   &__advantages {
     display: flex;
     justify-content: space-between;
@@ -246,25 +245,162 @@
     }
   }
 
-  // .about__advantages-item
-
-  &__advantages-item {
-  }
-
-  // .about__advantages-img
-
-  &__advantages-img {
-  }
-
-  // .about__advantages-text
-
-  &__advantages-text {
-  }
-
-  // .about__slider
-
   &__slider {
     width: 58.9rem;
     border-radius: 1rem;
+  }
+}
+
+.application {
+  margin-bottom: 0;
+  background-image: url(../img/u1.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__inner {
+    padding: 4.8rem 0 6.9rem;
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  & .form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 3.8rem;
+    background-color: $white;
+    border-radius: 1rem;
+    margin-top: 4.2rem;
+
+    &__group {
+      width: 114.1rem;
+      display: flex;
+      gap: 2rem;
+
+      &-input {
+        position: relative;
+      }
+
+      & .error__text {
+        position: absolute;
+        display: none;
+        font-size: 1.2rem;
+        color: $red;
+        padding-left: 2rem;
+        bottom: -2rem;
+      }
+    }
+
+    & .btn-primary {
+      width: 16.3rem;
+    }
+  }
+}
+
+
+.footer {
+
+  // .footer__top
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 0 3.8rem;
+    border-bottom: 0.1rem solid $red;
+  }
+
+  // .footer__left
+
+  &__left {
+
+  }
+
+  // .footer__logo
+
+  &__logo {
+    width: 13.8rem;
+    margin-bottom: 9.3rem;
+  }
+
+  // .footer__address
+
+  &__address {
+  }
+
+  // .footer__map
+
+  &__map {
+    width: 48.7rem;
+    height: 19.8rem;
+    border-radius: 1rem;
+
+    & img {
+      border-radius: 1rem;
+    }
+  }
+
+  // .footer__right
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 34.6rem;
+  }
+
+  // .footer__contacts
+
+  &__contacts {
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      & li:last-child {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // .footer__title
+
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+
+  // .footer__social
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4.2rem;
+      height: 4.2rem;
+      // padding: 8rem 6rem;
+      border-radius: 50%;
+      background-color: $red;
+
+      & img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+
+  // .footer__bottom
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.8rem 0;
   }
 }

@@ -49,12 +49,25 @@ button {
 
 img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 section {
   margin-bottom: 10.8rem;
+}
+
+input {
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+
+  &:focus {
+    outline: none;
+  }
+  &:active {
+      outline: none;
+  }
 }
 
 .container {
@@ -179,6 +192,25 @@ section {
   font-weight: 600;
 
   &:hover {
+    color: $red;
+  }
+}
+
+.input {
+  width: 37rem;
+  background-color: $grey-light;
+  color: $black;
+  padding: 1.4rem 2rem;
+  border-radius: 1rem;
+  border: 0;
+  font-size: 1.4rem;
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &.error {
+    border: 0.1rem solid $red;
     color: $red;
   }
 }
