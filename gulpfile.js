@@ -1,5 +1,21 @@
 "use strict";
 
+
+// const gulp = require('gulp');
+// const sass = require('gulp-sass')(require('sass'));
+// const server = require('browser-sync').create();
+// const concat = require('gulp-concat');
+// const babel = require('gulp-babel');
+// const plumber = require('gulp-plumber');
+// const rename = require('gulp-rename');
+// const postcss = require('gulp-postcss');
+// const autoprefixer = require('autoprefixer');
+// const csso = require('gulp-csso');
+// const webp = require('gulp-webp');
+// const fileinclude = require('gulp-file-include');
+// const imagemin = require('gulp-imagemin');
+// const del = require('del')
+
 import gulp from 'gulp';
 import browserSync from "browser-sync";
 import concat from 'gulp-concat';
@@ -52,8 +68,6 @@ gulp.task("css", function () {
 
 gulp.task("js", function () {
   return gulp.src([ // Берем файлы из источников
-    // 'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
-    // 'node_modules/swiper/swiper-bundle.min.js',
     'src/js/index.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
     ])
     .pipe(concat('index.js')) // Конкатенируем в один файл
@@ -68,7 +82,7 @@ gulp.task("img", function () {
   return gulp.src("src/assets/img/*.*")
     .pipe(imagemin())
     .pipe(webp())
-      .pipe(gulp.dest("dist/img"))
+      .pipe(gulp.dest("dist/assets/img"))
       .pipe(server.stream());
 });
 
@@ -92,9 +106,10 @@ gulp.task("copy", function () {
   return gulp.src([
     "src/assets/fonts/**/*",
     "src/assets/svg/**/*",
-    "src/assets/img/**/*"
+    "src/assets/img/**/*",
+    "src/js/lib/**/*"
   ], {
-    base: "src/assets"
+    base: "src/"
   })
   .pipe(gulp.dest("dist"));
 });

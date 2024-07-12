@@ -23,7 +23,7 @@
 }
 
 .hero {
-  background-image: url(../img/hero-img.webp);
+  background-image: url(../assets/img/hero-img.webp);
   mask-image: linear-gradient(rgb(0 0 0 / 100%) 80%, transparent);
   background-position: top center;
   background-size: cover;
@@ -122,8 +122,9 @@
       &--wrap {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
 
-        & .btn {
+        & .btn-next {
           margin-right: -0.7rem;
            & svg path {
             fill: $red;
@@ -145,27 +146,151 @@
 }
 
 
-// .apart-slider {
+.apart-slider {
 
-//   &__inner {
-//     background-color: $grey-light;
-//     border-radius: 1rem;
-//     padding: 3.8rem 4.8rem;
-//   }
+  &__inner {
+    position: relative;
+    background-color: $grey-light;
+    border-radius: 1rem;
+    padding: 3.8rem 4.8rem;
+  }
 
-//   &__content {
-//   }
+  &__content {
+    width: 32.7rem;
+    margin-bottom: 3.3rem;
+  }
 
-//   // .apart-slider__wrapper
+  &__title {
+    margin-bottom: 14.2rem;
+  }
 
-//   &__wrapper {
-//   }
+  // .apart-slider__wrapper
 
-//   // .apart-slider__slide
+  &__swiper {
+    overflow: hidden;
+    height: 50.4rem;
+    margin-top: -30rem;
 
-//   &__slide {
-//   }
-// }
+    & .swiper-wrapper {
+      align-items: flex-end;
+    }
+  }
+
+  & .swiper__btns {
+    position: absolute;
+    top: 0;
+    right: 73.2rem;
+    display: flex;
+    gap: 4rem;
+  }
+  &__wrapper {
+  }
+
+  // .apart-slider__slide
+
+  &__slide {
+    width: 32.7rem;
+    height: 20rem;
+    transition: width 0.3s ease-in-out 0.1s, height 0.3s ease-in-out;
+
+    &.swiper-slide-active {
+      width: 66rem;
+      height: 50.4rem;
+    }
+
+    & img {
+      border-radius: 1rem;
+    }
+  }
+}
+
+.benefits {
+  background-image: linear-gradient($white, transparent 45%), url(../assets/img/georgia-img.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // mask-image: linear-gradient(transparent, rgb(0 0 0 / 100%) 20%);
+
+  &__inner {
+    padding: 10rem 0 10rem 72.2rem;
+    position: relative;
+  }
+
+  // .why__title
+
+  &__title {
+    width: fit-content;
+    font-family: 'DaxlinePro';
+    font-size: 23rem;
+    line-height: 100%;
+    font-weight: 700;
+    background: url(../assets/img/u1.webp);
+    background-position: top 10% center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__subtitle {
+    display: block;
+    margin: 0 0 3.7rem 1.5rem;
+    font-family: "OpenSans";
+    font-size: 3.2rem;
+    color: $black;
+  }
+
+  // .why__slider
+
+  &-swiper {
+    position: relative;
+    margin-top: 7rem;
+    height: 25rem;
+    overflow: hidden;
+    
+    &__slide {
+      display: flex;
+      align-items: center;
+      width: 41rem;
+      height: 22rem;
+
+      &-text {
+        color: $white;
+        width: 35rem;
+      }
+    }
+
+    .swiper-wrapper {
+      flex-direction: column;
+    }
+  }
+
+  .btn-prev,
+    .btn-next {
+      left: 0;
+      right: unset;
+
+      & path {
+        fill: $white;
+      }
+    }
+
+    .btn-prev {
+      top: 1.5rem;
+      bottom: unset;
+      transform: rotate(90deg);
+    }
+
+    .btn-next {
+      top: unset;
+      bottom: 0;
+      transform: rotate(270deg);
+    }
+}
+.container {
+}
+.title-xs {
+}
+
 
 
 .residence {
@@ -173,7 +298,7 @@
     padding: 7rem 3.8rem;
     border-radius: 1rem;
     background-color: $grey-light;
-    background-image: url(../img/residence.webp);
+    background-image: url(../assets/img/residence.webp);
     background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -210,7 +335,7 @@
   }
 
   &__title {
-    margin-bottom: 6.6rem;
+    margin-bottom: 8.5rem;
   }
 
   &__desc {
@@ -230,7 +355,7 @@
       justify-content: center;
       gap: 1rem;
       width: 26.5rem;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
       background-color: $grey-light;
       border-radius: 1rem;
     }
@@ -245,15 +370,28 @@
     }
   }
 
-  &__slider {
+  &-swiper {
+    position: relative;
     width: 58.9rem;
     border-radius: 1rem;
+    overflow: hidden;
+
+    &__slide img {
+      border-radius: 1rem;
+    }
+
+    &__pagination {
+      top: 50%;
+      left: unset;
+      right: 2rem;
+      transform: translateY(-50%);
+    }
   }
 }
 
 .application {
   margin-bottom: 0;
-  background-image: url(../img/u1.webp);
+  background-image: url(../assets/img/u1.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

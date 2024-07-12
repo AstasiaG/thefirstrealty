@@ -34,5 +34,10 @@
     "gulp-sass": "^5.1.0",
     "gulp-webp": "^5.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ]
 }
