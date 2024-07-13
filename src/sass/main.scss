@@ -20,6 +20,10 @@
       padding: 0 0.4rem;
     }
   }
+
+  &__lang {
+    cursor: pointer;
+  }
 }
 
 .hero {
@@ -176,14 +180,13 @@
     }
   }
 
-  & .swiper__btns {
-    position: absolute;
-    top: 0;
-    right: 73.2rem;
-    display: flex;
-    gap: 4rem;
+  &__btn-prev {
+    top: 5.5rem;
+    left: 42%;
   }
-  &__wrapper {
+  &__btn-next {
+    top: 5.5rem;
+    left: 47%;
   }
 
   // .apart-slider__slide
@@ -191,9 +194,9 @@
   &__slide {
     width: 32.7rem;
     height: 20rem;
-    transition: width 0.3s ease-in-out 0.1s, height 0.3s ease-in-out;
+    transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
 
-    &.swiper-slide-active {
+    &.active {
       width: 66rem;
       height: 50.4rem;
     }
@@ -286,12 +289,6 @@
       transform: rotate(270deg);
     }
 }
-.container {
-}
-.title-xs {
-}
-
-
 
 .residence {
   &__inner {
@@ -389,6 +386,130 @@
   }
 }
 
+.team {
+
+		// .team__title
+
+		&__subtitle {
+      display: block;
+      margin-bottom: 1.3rem;
+		}
+
+		// .team__content
+
+		&__content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6.2rem;
+
+      &-right {
+        width: 34.4rem;
+
+        &-text {
+          width: 30.6rem;
+          margin-bottom: 8.2rem;
+        }
+      }
+		}
+
+    &-swiper {
+      width: 107.7rem;
+      overflow: hidden;
+
+      // .team-swiper__slide
+  
+      &__slide {
+        position: relative;
+        width: 34.6rem;
+        height: 40rem;
+        border-radius: 1rem;
+
+        &-img {
+          width: 100%;
+          height: 100%;
+
+          & img {
+            border-radius: 1rem;
+          }
+        }
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &-links {
+          align-self: flex-end;
+          & .link:hover path{
+            stroke: $red;
+          }
+        }
+      }
+
+      &__btns {
+        position: relative;
+        margin-bottom: 22.5rem;
+
+        .btn-next {
+          width: fit-content;
+          top: 0;
+          left: 7.5rem;
+          margin: 0;
+        }
+
+        .btn-prev {
+          width: fit-content;
+          top: 0;
+          left: 0;
+          margin: 0;
+        }
+      }
+  
+      // .team-swiper__slide-dies
+  
+      &__slide-dies {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 16.4rem;
+        padding: 3rem 3.8rem;
+        background-color: $grey-dark;
+        color: $white;
+        border-radius: 1rem;
+      }
+  
+      // .team-swiper__slide-post
+  
+      &__slide-post {
+        margin-bottom: 0.5rem;
+      }
+  
+      // .team-swiper__slide-name
+  
+      &__slide-name {
+        margin-bottom: 2.7rem;
+      }
+  
+      // .team-swiper__slide-lang
+  
+      &__slide-lang {
+      }
+  
+      // .team-swiper__slide-links
+  
+      &__slide-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+      }
+  
+  }
+}
+
+
+
 .application {
   margin-bottom: 0;
   background-image: url(../assets/img/u1.webp);
@@ -430,6 +551,10 @@
         color: $red;
         padding-left: 2rem;
         bottom: -2rem;
+
+        &.active {
+          display: block;
+        }
       }
     }
 
