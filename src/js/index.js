@@ -1,4 +1,6 @@
-$(function() {
+
+$(function () {
+  
   console.log('hello');
 
   //sliders
@@ -44,7 +46,8 @@ $(function() {
     },
     pagination: {
       el: '.about-swiper__pagination',
-      type: 'bullets'
+      type: 'bullets',
+      clickable: 'true',
     },
     speed: 1000,
   })
@@ -153,11 +156,11 @@ $(function() {
           nameError.textContent = "Заполните поле";
           nameError.className = "error__text active";
         }
-        if (phone.value == "") {
-          phone.classList.add("invalid");
-          phoneError.textContent = "Заполните поле";
-          phoneError.className = "error__text active";
-        }
+        // if (phone.value == "") {
+        //   phone.classList.add("invalid");
+        //   phoneError.textContent = "Заполните поле";
+        //   phoneError.className = "error__text active";
+        // }
         if (contactType.value == "") {
           contactType.classList.add("invalid");
           typeError.textContent = "Заполните поле";
@@ -172,8 +175,8 @@ $(function() {
         if (form.closest('.modal')) {
           form.closest('.modal').classList.remove("active");
         }
-        // $(".modal.success-application").addClass("active");
-        // openModal();
+        $(".modal.modal-success").addClass("active");
+        openModal();
       }
 
     });
@@ -184,4 +187,103 @@ $(function() {
   //map
 
 
+  initMap();
+
+  async function initMap() {
+      // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+      await ymaps3.ready;
+
+    const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapDefaultFeaturesLayer } = ymaps3;
+    
+      const markerElement = document.createElement('div');
+      // const markerHtml = "<img src='../assets/svg/marker.svg'>";
+      markerElement.className = 'marker';
+      markerElement.innerHTML = "<img src='../assets/svg/marker.svg'>";
+      
+      const marker = new YMapMarker(
+        {
+          // source: 'markerSource',
+          coordinates: [44.756951, 41.725037],
+          draggable: true,
+          mapFollowsOnDrag: true
+        },
+        markerElement
+      );
+
+        // Иницилиазируем карту
+      const map = new YMap(
+        // Передаём ссылку на HTMLElement контейнера
+        document.getElementById('map'),
+
+        // Передаём параметры инициализации карты
+        {
+          location: {
+            // Координаты центра карты
+            center: [44.756951, 41.725037],
+
+            // Уровень масштабирования
+            zoom: 14
+          }
+        }
+      );
+
+      // Добавляем слой для отображения схематической карты
+    map.addChild(new YMapDefaultSchemeLayer());
+    map.addChild(new YMapDefaultFeaturesLayer());
+    map.addChild(marker);
+  }
+
+
+  //modal
+
+  let scrollY = 0;
+
+  function openModal() {
+    scrollY = window.scrollY;
+    const body = document.body;
+    body.style.height = "100vh";
+    body.style.overflowY = "hidden";
+    if (window.innerWidth > 768) {
+      body.style.paddingRight = "15px";
+    }
+  }
+
+  function closeModal() {
+    const body = document.body;
+    body.style.position = "";
+    body.style.top = "";
+    body.style.height = "";
+    body.style.overflowY = "";
+    body.style.paddingRight = "";
+    window.history.replaceState(
+      null,
+      null,
+      window.location.pathname + window.location.search,
+    );
+    window.scrollTo(0, scrollY);
+  }
+
+  if ($(".modal__close-btn").length) {
+    $(".modal__close-btn").on("click", function () {
+      if ($(this).closest(".modal").hasClass("active")) {
+        $(this).closest(".modal").removeClass('active');
+        closeModal();
+      }
+    });
+  }
+
+  document.addEventListener("click", (el) => {
+    if ($(".modal").hasClass("active")) {
+      const md = document.querySelector(".modal");
+      const wrap = document.querySelector(".modal__inner");
+      const notWrap = el.composedPath().includes(wrap);
+      const window = el.composedPath().includes(md);
+      if (window && !notWrap) {
+        $(".modal").removeClass("active");
+        closeModal();
+      }
+    }
+  });
+  
+  
 })

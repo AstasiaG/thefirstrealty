@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The First Realty</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://api-maps.yandex.ru/v3/?apikey=dcd0528c-91b7-4235-b00b-956fca116e79&lang=ru_RU"></script>
 </head>
 <body>
   <header>
@@ -640,13 +641,13 @@
               </div>
               <div class="team-swiper__slide swiper-slide">
                 <div class="team-swiper__slide-img">
-                  <img src="./assets/img/specialists1.webp" alt="">
+                  <img src="./assets/img/specialists2.webp" alt="">
                 </div>
                 <div class="team-swiper__slide-dies">
                   <div class="team-swiper__slide-content">
-                    <span class="team-swiper__slide-post text-s">Агент по недвижимости</span>
-                    <span class="team-swiper__slide-name title-xs">Александр</span>
-                    <span class="team-swiper__slide-lang text-s">Русский, Английский</span>
+                    <span class="team-swiper__slide-post text-s">Менеджер</span>
+                    <span class="team-swiper__slide-name title-xs">Екатерина</span>
+                    <span class="team-swiper__slide-lang text-s">Русский, Английский, Грузинский</span>
                   </div>
                   <div class="team-swiper__slide-links">
                     <a class="link" href="">
@@ -688,13 +689,13 @@
               </div>
               <div class="team-swiper__slide swiper-slide">
                 <div class="team-swiper__slide-img">
-                  <img src="./assets/img/specialists1.webp" alt="">
+                  <img src="./assets/img/specialists2.webp" alt="">
                 </div>
                 <div class="team-swiper__slide-dies">
                   <div class="team-swiper__slide-content">
-                    <span class="team-swiper__slide-post text-s">Агент по недвижимости</span>
-                    <span class="team-swiper__slide-name title-xs">Александр</span>
-                    <span class="team-swiper__slide-lang text-s">Русский, Английский</span>
+                    <span class="team-swiper__slide-post text-s">Менеджер</span>
+                    <span class="team-swiper__slide-name title-xs">Екатерина</span>
+                    <span class="team-swiper__slide-lang text-s">Русский, Английский, Грузинский</span>
                   </div>
                   <div class="team-swiper__slide-links">
                     <a class="link" href="">
@@ -771,9 +772,7 @@
           </div>
           <p class="footer__address text">Georgia, Tbilisi,<br>Alexander Kazbegi Ave, 16</p>
         </div>
-        <div class="footer__map">
-          <img src="./assets/img/about.webp" alt="">
-        </div>
+        <div class="footer__map" id="map"></div>
         <div class="footer__right">
           <div class="footer__contacts">
             <p class="footer__title text">Контакты</p>
@@ -805,6 +804,17 @@
       </div>
     </div>
   </footer>
+  <div class="modal modal-success">
+    <div class="modal__inner">
+      <div class="modal__close-btn modal__cross">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M23.5638 8.0638C23.6707 7.95704 23.7555 7.83026 23.8134 7.69072C23.8713 7.55117 23.9012 7.40159 23.9013 7.25051C23.9014 7.09943 23.8717 6.94981 23.814 6.81019C23.7562 6.67058 23.6716 6.5437 23.5648 6.4368C23.458 6.32991 23.3313 6.24509 23.1917 6.18718C23.0522 6.12928 22.9026 6.09943 22.7515 6.09934C22.6004 6.09925 22.4508 6.12891 22.3112 6.18664C22.1716 6.24437 22.0447 6.32904 21.9378 6.4358L14.9998 13.3738L8.0638 6.4358C7.84792 6.21992 7.55511 6.09863 7.2498 6.09863C6.94449 6.09863 6.65169 6.21992 6.4358 6.4358C6.21992 6.65169 6.09863 6.94449 6.09863 7.2498C6.09863 7.55511 6.21992 7.84792 6.4358 8.0638L13.3738 14.9998L6.4358 21.9358C6.32891 22.0427 6.24411 22.1696 6.18626 22.3093C6.12841 22.4489 6.09863 22.5986 6.09863 22.7498C6.09863 22.901 6.12841 23.0507 6.18626 23.1903C6.24411 23.33 6.32891 23.4569 6.4358 23.5638C6.65169 23.7797 6.94449 23.901 7.2498 23.901C7.40098 23.901 7.55067 23.8712 7.69034 23.8133C7.83 23.7555 7.95691 23.6707 8.0638 23.5638L14.9998 16.6258L21.9378 23.5638C22.1537 23.7794 22.4464 23.9005 22.7515 23.9003C23.0566 23.9001 23.3492 23.7787 23.5648 23.5628C23.7804 23.3469 23.9015 23.0542 23.9013 22.7491C23.9011 22.444 23.7797 22.1514 23.5638 21.9358L16.6258 14.9998L23.5638 8.0638Z" fill="#2A2A2A"/>
+        </svg>
+      </div>
+      <p class="modal__text title-m">Заявка отправлена</p>
+      <button class="modal__close-btn btn-secondary">Продолжить</button>
+    </div>
+  </div>
   <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="./js/lib/jquery-3.7.1.min.js"></script>
