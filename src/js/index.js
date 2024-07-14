@@ -1,7 +1,4 @@
-
 $(function () {
-  
-  console.log('hello');
 
   //sliders
 
@@ -63,6 +60,7 @@ $(function () {
     speed: 1000,
   })
 
+
   //cards
 
   $('.projects__card:nth-child(n + 10)').addClass('hidden');
@@ -90,6 +88,7 @@ $(function () {
     }
   })
 
+
   //validation
 
     const form = document.querySelector('.form');
@@ -99,6 +98,8 @@ $(function () {
     const nameError = document.querySelector(".form__input--name + span.error__text");
     const phoneError = document.querySelector(".form__input--tel + span.error__text");
     const typeError = document.querySelector(".form__input--type + span.error__text");
+
+    $('.form__input--tel').inputmask('+7 (999) 999-99-99');
     
     name.addEventListener("input", function (event) {
       if (name.validity.valid) {
@@ -156,11 +157,11 @@ $(function () {
           nameError.textContent = "Заполните поле";
           nameError.className = "error__text active";
         }
-        // if (phone.value == "") {
-        //   phone.classList.add("invalid");
-        //   phoneError.textContent = "Заполните поле";
-        //   phoneError.className = "error__text active";
-        // }
+        if (phone.value == "") {
+          phone.classList.add("invalid");
+          phoneError.textContent = "Заполните поле";
+          phoneError.className = "error__text active";
+        }
         if (contactType.value == "") {
           contactType.classList.add("invalid");
           typeError.textContent = "Заполните поле";
@@ -180,9 +181,7 @@ $(function () {
       }
 
     });
-  
-  $(".form__input--tel").mask("+7 (999) 999 99 99");
-  
+
 
   //map
 
@@ -190,19 +189,16 @@ $(function () {
   initMap();
 
   async function initMap() {
-      // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-      await ymaps3.ready;
+    await ymaps3.ready;
 
     const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapDefaultFeaturesLayer } = ymaps3;
     
       const markerElement = document.createElement('div');
-      // const markerHtml = "<img src='../assets/svg/marker.svg'>";
       markerElement.className = 'marker';
       markerElement.innerHTML = "<img src='../assets/svg/marker.svg'>";
       
       const marker = new YMapMarker(
         {
-          // source: 'markerSource',
           coordinates: [44.756951, 41.725037],
           draggable: true,
           mapFollowsOnDrag: true
@@ -210,24 +206,16 @@ $(function () {
         markerElement
       );
 
-        // Иницилиазируем карту
       const map = new YMap(
-        // Передаём ссылку на HTMLElement контейнера
         document.getElementById('map'),
-
-        // Передаём параметры инициализации карты
         {
           location: {
-            // Координаты центра карты
             center: [44.756951, 41.725037],
-
-            // Уровень масштабирования
             zoom: 14
           }
         }
       );
 
-      // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
     map.addChild(new YMapDefaultFeaturesLayer());
     map.addChild(marker);
@@ -285,5 +273,13 @@ $(function () {
     }
   });
   
-  
+  $('.header__lang').on('click', function () {
+    let text = $(this).text();
+
+    if (text === "RU") {
+      $(this).text("EN")
+    } else {
+      $(this).text("RU")
+    }
+  })
 })

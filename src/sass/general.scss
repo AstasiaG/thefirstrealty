@@ -84,7 +84,7 @@ input {
 
 @media (max-width: 48em) {
   .container {
-      padding: 0 4rem; // в моб версии отступ от края задаем для всех контейнеров, а там где не нужно можем точечно убрать
+      padding: 0 4rem; 
       width: 100%;
   }
 }

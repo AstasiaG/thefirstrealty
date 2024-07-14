@@ -1,21 +1,5 @@
 "use strict";
 
-
-// const gulp = require('gulp');
-// const sass = require('gulp-sass')(require('sass'));
-// const server = require('browser-sync').create();
-// const concat = require('gulp-concat');
-// const babel = require('gulp-babel');
-// const plumber = require('gulp-plumber');
-// const rename = require('gulp-rename');
-// const postcss = require('gulp-postcss');
-// const autoprefixer = require('autoprefixer');
-// const csso = require('gulp-csso');
-// const webp = require('gulp-webp');
-// const fileinclude = require('gulp-file-include');
-// const imagemin = require('gulp-imagemin');
-// const del = require('del')
-
 import gulp from 'gulp';
 import browserSync from "browser-sync";
 import concat from 'gulp-concat';
@@ -67,10 +51,8 @@ gulp.task("css", function () {
 });
 
 gulp.task("js", function () {
-  return gulp.src([ // Берем файлы из источников
-    'src/js/index.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-    ])
-    .pipe(concat('index.js')) // Конкатенируем в один файл
+  return gulp.src(['src/js/index.js'])
+    .pipe(concat('index.js'))
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -82,8 +64,8 @@ gulp.task("img", function () {
   return gulp.src("src/assets/img/*.*")
     .pipe(imagemin())
     .pipe(webp())
-      .pipe(gulp.dest("dist/assets/img"))
-      .pipe(server.stream());
+    .pipe(gulp.dest("dist/assets/img"))
+    .pipe(server.stream());
 });
 
 

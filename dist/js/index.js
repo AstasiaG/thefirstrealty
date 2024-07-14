@@ -5,8 +5,6 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 $(function () {
-  console.log('hello');
-
   //sliders
 
   var serviceSwiper = new Swiper(".apart-swiper", {
@@ -95,6 +93,7 @@ $(function () {
   var nameError = document.querySelector(".form__input--name + span.error__text");
   var phoneError = document.querySelector(".form__input--tel + span.error__text");
   var typeError = document.querySelector(".form__input--type + span.error__text");
+  $('.form__input--tel').inputmask('+7 (999) 999-99-99');
   name.addEventListener("input", function (event) {
     if (name.validity.valid) {
       nameError.innerText = "";
@@ -147,11 +146,11 @@ $(function () {
         nameError.textContent = "Заполните поле";
         nameError.className = "error__text active";
       }
-      // if (phone.value == "") {
-      //   phone.classList.add("invalid");
-      //   phoneError.textContent = "Заполните поле";
-      //   phoneError.className = "error__text active";
-      // }
+      if (phone.value == "") {
+        phone.classList.add("invalid");
+        phoneError.textContent = "Заполните поле";
+        phoneError.className = "error__text active";
+      }
       if (contactType.value == "") {
         contactType.classList.add("invalid");
         typeError.textContent = "Заполните поле";
@@ -170,7 +169,6 @@ $(function () {
       openModal();
     }
   });
-  $(".form__input--tel").mask("+7 (999) 999 99 99");
 
   //map
 
@@ -188,27 +186,20 @@ $(function () {
             return ymaps3.ready;
           case 2:
             _ymaps = ymaps3, YMap = _ymaps.YMap, YMapDefaultSchemeLayer = _ymaps.YMapDefaultSchemeLayer, YMapMarker = _ymaps.YMapMarker, YMapDefaultFeaturesLayer = _ymaps.YMapDefaultFeaturesLayer;
-            markerElement = document.createElement('div'); // const markerHtml = "<img src='../assets/svg/marker.svg'>";
+            markerElement = document.createElement('div');
             markerElement.className = 'marker';
             markerElement.innerHTML = "<img src='../assets/svg/marker.svg'>";
             marker = new YMapMarker({
-              // source: 'markerSource',
               coordinates: [44.756951, 41.725037],
               draggable: true,
               mapFollowsOnDrag: true
-            }, markerElement); // Иницилиазируем карту
-            map = new YMap(
-            // Передаём ссылку на HTMLElement контейнера
-            document.getElementById('map'),
-            // Передаём параметры инициализации карты
-            {
+            }, markerElement);
+            map = new YMap(document.getElementById('map'), {
               location: {
-                // Координаты центра карты
                 center: [44.756951, 41.725037],
-                // Уровень масштабирования
                 zoom: 14
               }
-            }); // Добавляем слой для отображения схематической карты
+            });
             map.addChild(new YMapDefaultSchemeLayer());
             map.addChild(new YMapDefaultFeaturesLayer());
             map.addChild(marker);
@@ -258,6 +249,14 @@ $(function () {
         $(".modal").removeClass("active");
         closeModal();
       }
+    }
+  });
+  $('.header__lang').on('click', function () {
+    var text = $(this).text();
+    if (text === "RU") {
+      $(this).text("EN");
+    } else {
+      $(this).text("RU");
     }
   });
 });
