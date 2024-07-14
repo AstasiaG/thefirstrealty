@@ -150,7 +150,7 @@
 }
 
 
-.apart-slider {
+.apart {
 
   &__inner {
     position: relative;
@@ -170,7 +170,7 @@
 
   // .apart-slider__wrapper
 
-  &__swiper {
+  &-swiper {
     overflow: hidden;
     height: 50.4rem;
     margin-top: -30rem;
@@ -178,37 +178,39 @@
     & .swiper-wrapper {
       align-items: flex-end;
     }
+
+    &__btn-prev {
+      top: 5.5rem;
+      left: 42%;
+    }
+    
+    &__btn-next {
+      top: 5.5rem;
+      left: 47%;
+    }
+
+    &__slide {
+      width: 32.7rem;
+      height: 20rem;
+      transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
+  
+      &.active {
+        width: 66rem;
+        height: 50.4rem;
+      }
+  
+      & img {
+        border-radius: 1rem;
+      }
+    }
   }
 
-  &__btn-prev {
-    top: 5.5rem;
-    left: 42%;
-  }
-  &__btn-next {
-    top: 5.5rem;
-    left: 47%;
-  }
 
   // .apart-slider__slide
-
-  &__slide {
-    width: 32.7rem;
-    height: 20rem;
-    transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
-
-    &.active {
-      width: 66rem;
-      height: 50.4rem;
-    }
-
-    & img {
-      border-radius: 1rem;
-    }
-  }
 }
 
 .benefits {
-  background-image: linear-gradient($white, transparent 45%), url(../assets/img/georgia-img.webp);
+  background-image: linear-gradient($white, transparent 45%), url(../assets/img/benefits.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -332,7 +334,7 @@
   }
 
   &__title {
-    margin-bottom: 8.5rem;
+    margin-bottom: 11rem;
   }
 
   &__desc {
@@ -407,7 +409,7 @@
 
         &-text {
           width: 30.6rem;
-          margin-bottom: 8.2rem;
+          margin-bottom: 7rem;
         }
       }
 		}
@@ -449,7 +451,7 @@
 
       &__btns {
         position: relative;
-        margin-bottom: 22.5rem;
+        margin-bottom: 23.5rem;
 
         .btn-next {
           width: fit-content;
@@ -675,6 +677,7 @@
 
     & .link {
       font-weight: 400;
+      cursor: pointer;
     }
   }
 }

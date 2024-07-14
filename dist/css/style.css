@@ -36,6 +36,7 @@ html {
   font-size: 62.5%;
   font-style: normal;
   font-weight: normal;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -506,63 +507,63 @@ input:active {
   margin: 4rem auto 0;
 }
 
-.apart-slider__inner {
+.apart__inner {
   position: relative;
   background-color: #F2EFF0;
   border-radius: 1rem;
   padding: 3.8rem 4.8rem;
 }
 
-.apart-slider__content {
+.apart__content {
   width: 32.7rem;
   margin-bottom: 3.3rem;
 }
 
-.apart-slider__title {
+.apart__title {
   margin-bottom: 14.2rem;
 }
 
-.apart-slider__swiper {
+.apart-swiper {
   overflow: hidden;
   height: 50.4rem;
   margin-top: -30rem;
 }
 
-.apart-slider__swiper .swiper-wrapper {
+.apart-swiper .swiper-wrapper {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
 
-.apart-slider__btn-prev {
+.apart-swiper__btn-prev {
   top: 5.5rem;
   left: 42%;
 }
 
-.apart-slider__btn-next {
+.apart-swiper__btn-next {
   top: 5.5rem;
   left: 47%;
 }
 
-.apart-slider__slide {
+.apart-swiper__slide {
   width: 32.7rem;
   height: 20rem;
   -webkit-transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
   transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
 }
 
-.apart-slider__slide.active {
+.apart-swiper__slide.active {
   width: 66rem;
   height: 50.4rem;
 }
 
-.apart-slider__slide img {
+.apart-swiper__slide img {
   border-radius: 1rem;
 }
 
 .benefits {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(45%, transparent)), url(../assets/img/georgia-img.webp);
-  background-image: linear-gradient(#FFFFFF, transparent 45%), url(../assets/img/georgia-img.webp);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(45%, transparent)), url(../assets/img/benefits.webp);
+  background-image: linear-gradient(#FFFFFF, transparent 45%), url(../assets/img/benefits.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -692,7 +693,7 @@ input:active {
 }
 
 .about__title {
-  margin-bottom: 8.5rem;
+  margin-bottom: 11rem;
 }
 
 .about__desc {
@@ -780,7 +781,7 @@ input:active {
 
 .team__content-right-text {
   width: 30.6rem;
-  margin-bottom: 8.2rem;
+  margin-bottom: 7rem;
 }
 
 .team-swiper {
@@ -826,7 +827,7 @@ input:active {
 
 .team-swiper__btns {
   position: relative;
-  margin-bottom: 22.5rem;
+  margin-bottom: 23.5rem;
 }
 
 .team-swiper__btns .btn-next {
@@ -1054,6 +1055,7 @@ input:active {
 
 .footer__bottom .link {
   font-weight: 400;
+  cursor: pointer;
 }
 
 .modal {

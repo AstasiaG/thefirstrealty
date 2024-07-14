@@ -5,13 +5,13 @@ $(function () {
 
   //sliders
 
-  const serviceSwiper = new Swiper(".apart-slider__swiper", {
+  const serviceSwiper = new Swiper(".apart-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 15,
     loop: 'true',
     navigation: {
-      nextEl: '.apart-slider__btn-prev',
-      prevEl: '.apart-slider__btn-next',
+      nextEl: '.apart-swiper__btn-prev',
+      prevEl: '.apart-swiper__btn-next',
     },
     speed: 500,
     on: {
@@ -19,7 +19,7 @@ $(function () {
         let activeId = swiper.activeIndex;
         let pseudoActive = swiper.slides[activeId + 2];
 
-        $('.apart-slider__slide').removeClass('active');
+        $('.apart-swiper__slide').removeClass('active');
         pseudoActive.classList.add('active');
       }
     }
