@@ -98,8 +98,6 @@ $(function () {
     const nameError = document.querySelector(".form__input--name + span.error__text");
     const phoneError = document.querySelector(".form__input--tel + span.error__text");
     const typeError = document.querySelector(".form__input--type + span.error__text");
-
-    $('.form__input--tel').inputmask('+7 (999) 999-99-99');
     
     name.addEventListener("input", function (event) {
       if (name.validity.valid) {
@@ -114,21 +112,6 @@ $(function () {
         nameError.className = "error__text active";
         typeError.textContent = "Некорректные данные";
         name.classList.add("invalid");
-      }
-    });
-
-    phone.addEventListener("input", function (event) {
-      if (phone.validity.valid) {
-        phoneError.textContent = "";
-        phoneError.className = "error__text";
-        phone.classList.remove("invalid");
-      } else {
-        if (phone.validity.valueMissing) {
-          phoneError.className = "error__text active";
-          phone.classList.add("invalid");
-        }
-        phoneError.className = "error__text active";
-        phone.classList.add("invalid");
       }
     });
     
@@ -146,23 +129,34 @@ $(function () {
         contactType.classList.add("invalid");
       }
     });
+  
+  $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
+    "onincomplete": function () {
+      phoneError.className = "error__text active";
+      phone.classList.add("invalid");
+    },
+    "oncomplete": function () {
+      phoneError.className = "error__text";
+      phone.classList.remove("invalid");
+    }
+  });
+  console.log($('.form .btn-primary'))
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      console.log(name.value, phone.value, contactType.value)
 
-      if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "") {
-        if (name.value == "") {
+      if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "" ) {
+        if (name.value === "") {
           name.classList.add("invalid");
           nameError.textContent = "Заполните поле";
           nameError.className = "error__text active";
         }
-        if (phone.value == "") {
+        if (phone.value === "") {
           phone.classList.add("invalid");
           phoneError.textContent = "Заполните поле";
           phoneError.className = "error__text active";
         }
-        if (contactType.value == "") {
+        if (contactType.value === "") {
           contactType.classList.add("invalid");
           typeError.textContent = "Заполните поле";
           typeError.className = "error__text active";
@@ -173,9 +167,7 @@ $(function () {
         name.value = "";
         phone.value = "";
         contactType.value = "";
-        if (form.closest('.modal')) {
-          form.closest('.modal').classList.remove("active");
-        }
+
         $(".modal.modal-success").addClass("active");
         openModal();
       }
@@ -195,7 +187,7 @@ $(function () {
     
       const markerElement = document.createElement('div');
       markerElement.className = 'marker';
-      markerElement.innerHTML = "<img src='../assets/svg/marker.svg'>";
+      markerElement.innerHTML = "<img src='./assets/svg/marker.svg'>";
       
       const marker = new YMapMarker(
         {

@@ -146,6 +146,7 @@ input {
   }
 
   &-secondary {
+    width: fit-content;
     padding: 1.2rem 2.9rem;
     border: 0.1rem solid $red;
     color: $red;

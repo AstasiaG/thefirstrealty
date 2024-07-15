@@ -732,7 +732,7 @@
               Наши квалифицированные специалисты помогут вам с выбором и ответят на 
               все интересующие вопросы
             </p>
-            <button class="btn-secondary">Стать партнером</button>
+            <a class="btn-secondary" href="#contacts">Стать партнером</a>
           </div>
         </div>
       </div>
@@ -749,7 +749,7 @@
                 <span class="error__text">Некорректные данные</span>
               </label>
               <label class="form__group-input">
-                <input class="form__input--tel input" type="tel" name="tel" placeholder="Телефон">
+                <input class="form__input--tel input" type="tel" name="tel" placeholder="Телефон" pattern="^\+7\s\(\d{3}\)\s{1}\d{3}-{1}\d{2}-{1}\d{2}$">
                 <span class="error__text">Некорректные данные</span>
               </label>
               <label class="form__group-input">
@@ -817,6 +817,7 @@
     </div>
   </div>
 
+  
   <script src="./js/lib/jquery-3.7.1.min.js"></script>
   <script src="./js/lib/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>

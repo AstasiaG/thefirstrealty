@@ -156,6 +156,9 @@ input:active {
 }
 
 .btn-secondary {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 1.2rem 2.9rem;
   border: 0.1rem solid #E7214D;
   color: #E7214D;

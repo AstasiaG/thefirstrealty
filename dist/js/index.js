@@ -93,7 +93,6 @@ $(function () {
   var nameError = document.querySelector(".form__input--name + span.error__text");
   var phoneError = document.querySelector(".form__input--tel + span.error__text");
   var typeError = document.querySelector(".form__input--type + span.error__text");
-  $('.form__input--tel').inputmask('+7 (999) 999-99-99');
   name.addEventListener("input", function (event) {
     if (name.validity.valid) {
       nameError.innerText = "";
@@ -107,20 +106,6 @@ $(function () {
       nameError.className = "error__text active";
       typeError.textContent = "Некорректные данные";
       name.classList.add("invalid");
-    }
-  });
-  phone.addEventListener("input", function (event) {
-    if (phone.validity.valid) {
-      phoneError.textContent = "";
-      phoneError.className = "error__text";
-      phone.classList.remove("invalid");
-    } else {
-      if (phone.validity.valueMissing) {
-        phoneError.className = "error__text active";
-        phone.classList.add("invalid");
-      }
-      phoneError.className = "error__text active";
-      phone.classList.add("invalid");
     }
   });
   contactType.addEventListener("input", function (event) {
@@ -137,21 +122,31 @@ $(function () {
       contactType.classList.add("invalid");
     }
   });
+  $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
+    "onincomplete": function onincomplete() {
+      phoneError.className = "error__text active";
+      phone.classList.add("invalid");
+    },
+    "oncomplete": function oncomplete() {
+      phoneError.className = "error__text";
+      phone.classList.remove("invalid");
+    }
+  });
+  console.log($('.form .btn-primary'));
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log(name.value, phone.value, contactType.value);
     if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "") {
-      if (name.value == "") {
+      if (name.value === "") {
         name.classList.add("invalid");
         nameError.textContent = "Заполните поле";
         nameError.className = "error__text active";
       }
-      if (phone.value == "") {
+      if (phone.value === "") {
         phone.classList.add("invalid");
         phoneError.textContent = "Заполните поле";
         phoneError.className = "error__text active";
       }
-      if (contactType.value == "") {
+      if (contactType.value === "") {
         contactType.classList.add("invalid");
         typeError.textContent = "Заполните поле";
         typeError.className = "error__text active";
@@ -162,9 +157,6 @@ $(function () {
       name.value = "";
       phone.value = "";
       contactType.value = "";
-      if (form.closest('.modal')) {
-        form.closest('.modal').classList.remove("active");
-      }
       $(".modal.modal-success").addClass("active");
       openModal();
     }
@@ -188,7 +180,7 @@ $(function () {
             _ymaps = ymaps3, YMap = _ymaps.YMap, YMapDefaultSchemeLayer = _ymaps.YMapDefaultSchemeLayer, YMapMarker = _ymaps.YMapMarker, YMapDefaultFeaturesLayer = _ymaps.YMapDefaultFeaturesLayer;
             markerElement = document.createElement('div');
             markerElement.className = 'marker';
-            markerElement.innerHTML = "<img src='../assets/svg/marker.svg'>";
+            markerElement.innerHTML = "<img src='./assets/svg/marker.svg'>";
             marker = new YMapMarker({
               coordinates: [44.756951, 41.725037],
               draggable: true,
