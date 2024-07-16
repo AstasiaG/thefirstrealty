@@ -60,6 +60,27 @@ $(function () {
     speed: 1000,
   })
 
+  const initCakeSwiper = (swiperContainer) => {
+    return new Swiper(swiperContainer.find(".swiper")[0], {
+        navigation: {
+            nextEl: swiperContainer.find(".swiper-button-next")[0],
+            prevEl: swiperContainer.find(".swiper-button-prev")[0],
+        },
+        pagination: {
+            el: swiperContainer.find(".swiper-pagination")[0],
+            clickable: true,
+      },
+        slidesPerView: 1,
+        loop: "true",
+        spaceBetween: 1,
+        speed: 1000,
+    });
+  };
+
+  $(".projects__card").each(function () {
+    initCakeSwiper($(this));
+  });
+
 
   //cards
 
@@ -74,7 +95,7 @@ $(function () {
       for (let i = 0; i < 3; i++) {
         if (hiddenCards[i]) {
           $(hiddenCards[i]).slideDown();
-          $(hiddenCards[i]).removeClass("hidden").css("display", "flex");
+          $(hiddenCards[i]).removeClass("hidden").css("display", "block");
         }
       }
     } else {

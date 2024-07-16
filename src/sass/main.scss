@@ -79,29 +79,78 @@
 
   &__card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 46.6rem;
-    box-shadow: 0px 1px 5px $grey-dark;
-    border-radius: 1rem;
+    width: 100%;
+    width: 41.3rem;
 
-    &-image {
-      width: 100%;
-      object-fit: cover;
+    // &-wrapper {
+    //   width: 41.3rem;
+    // }
+
+    &-count {
+      position: absolute;
+      z-index: 5;
+      top: 1.4rem;
+      right: 2.2rem;
+      color: $white;
+      width: 5.2rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+
+      & span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 400;
+      }
     }
 
-    &-title {
+    &-ready {
       position: absolute;
-      z-index: 2;
-      top: 22.8rem;
+      z-index: 5;
+      bottom: 8rem;
+      right: 2.2rem;
       display: flex;
-      justify-content: space-between;
-      align-items: end;
-      width: 100%;
-      height: 6.4rem;
-      padding: 1rem 3.8rem;
-      background-color: $grey-dark;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.6rem 0.6rem 0.9rem;
+      border-radius: 5rem;
+      background-color: $red;
       color: $white;
+
+      & img {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+
+    &-swiper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    & .btn-next,
+    & .btn-prev {
+      top: 40%;
+
+      & path {
+        fill: $white;
+      }
+    }
+
+    &--btn-next {
+      right: 1.3rem;
+    }
+
+    &--btn-prev {
+      left: 1.3rem;
+    }
+
+    &-slide {
+      width: 100%;
+      height: 26.5rem;
+      & img {
+        border-radius: 1rem;
+      }
     }
 
     &-name {
@@ -110,37 +159,35 @@
     }
 
     &-bottom {
-      padding: 1.5rem 3.8rem 2.5rem;
+      padding: 1.6rem 0 0.5rem;
     }
 
-    &-location {
+    &-title,
+    &-descr {
       display: flex;
       justify-content: space-between;
-      color: $grey;
-      margin-bottom: 1.6rem;
+      margin-bottom: 0.5rem;
     }
 
-    &-description {
-      width: 33.2rem;
+    &-name,
+    &-cost,
+    &-about {
+      text-transform: uppercase;
+    }
 
-      &--wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+    &-descr {
+      margin-bottom: 0;
+    }
 
-        & .btn-next {
-          margin-right: -0.7rem;
-           & svg path {
-            fill: $red;
-           }
+    &-about,
+    &-sub {
+      color: $grey;
+    }
 
-           &:hover {
-            & svg path {
-              fill: $black;
-             }
-           }
-        }
-      }
+    &-pagination {
+      left: 50%;
+      bottom: 8.5rem;
+      transform: translate(-50%);
     }
   }
 
@@ -156,21 +203,21 @@
     position: relative;
     background-color: $grey-light;
     border-radius: 1rem;
-    padding: 3.8rem 4.8rem;
+    padding: 3.8rem 2.7rem;
   }
 
   &__content {
-    width: 32.7rem;
+    width: 27.6rem;
     margin-bottom: 3.3rem;
   }
 
   &__title {
-    margin-bottom: 14.2rem;
+    margin-bottom: 13.2rem;
   }
 
   &-swiper {
     overflow: hidden;
-    height: 50.4rem;
+    height: 48.6rem;
     margin-top: -30rem;
 
     & .swiper-wrapper {
@@ -179,22 +226,22 @@
 
     &__btn-prev {
       top: 5.5rem;
-      left: 42%;
+      left: 37%;
     }
     
     &__btn-next {
       top: 5.5rem;
-      left: 47%;
+      left: 42%;
     }
 
     &__slide {
-      width: 32.7rem;
-      height: 20rem;
+      width: 26.6rem;
+      height: 18.2rem;
       transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
   
       &.active {
-        width: 66rem;
-        height: 50.4rem;
+        width: 66.5rem;
+        height: 48.6rem;
       }
   
       & img {
@@ -211,7 +258,9 @@
   background-size: cover;
 
   &__inner {
-    padding: 0 0 10rem 72.2rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 10rem 0;
     position: relative;
   }
 
@@ -284,7 +333,7 @@
 
 .residence {
   &__inner {
-    padding: 7rem 3.8rem;
+    padding: 7rem 2.7rem;
     border-radius: 1rem;
     background-color: $grey-light;
     background-image: url(../assets/img/residence.webp);
@@ -318,7 +367,7 @@
   }
 
   &__content {
-    width: 83.5rem;
+    width: 73.3rem;
   }
 
   &__title {
@@ -341,8 +390,8 @@
       align-items: center;
       justify-content: center;
       gap: 1rem;
-      width: 26.5rem;
-      padding: 2.5rem 1.5rem;
+      width: 23.3rem;
+      padding: 2rem;
       background-color: $grey-light;
       border-radius: 1rem;
     }
@@ -359,7 +408,7 @@
 
   &-swiper {
     position: relative;
-    width: 58.9rem;
+    width: 52.6rem;
     border-radius: 1rem;
     overflow: hidden;
 
@@ -371,6 +420,7 @@
       top: 50%;
       left: unset;
       right: 2rem;
+      flex-direction: column;
       transform: translateY(-50%);
     }
   }
@@ -389,23 +439,23 @@
     margin-top: 6.2rem;
 
     &-right {
-      width: 34.4rem;
+      width: 26.2rem;
 
       &-text {
-        width: 30.6rem;
-        margin-bottom: 7rem;
+        width: 100%;
+        margin-bottom: 4.5rem;
       }
     }
   }
 
   &-swiper {
-    width: 107.7rem;
+    width: 99.3rem;
     overflow: hidden;
 
     &__slide {
       position: relative;
-      width: 34.6rem;
-      height: 40rem;
+      width: 31.8rem;
+      height: 38.1rem;
       border-radius: 1rem;
 
       &-img {
@@ -441,7 +491,8 @@
 
     &__btns {
       position: relative;
-      margin-bottom: 23.5rem;
+      height: 4rem;
+      margin-bottom: 18.7rem;
 
       .btn-next {
         width: fit-content;
@@ -464,8 +515,8 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      height: 16.4rem;
-      padding: 3rem 3.8rem;
+      height: 15.3rem;
+      padding: 2.5rem 2.6rem;
       background-color: $grey-dark;
       color: $white;
       border-radius: 1rem;
@@ -501,13 +552,13 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 3.8rem;
+    padding: 3.9rem 2.5rem;
     background-color: $white;
     border-radius: 1rem;
     margin-top: 4.2rem;
 
     &__group {
-      width: 114.1rem;
+      width: 103rem;
       display: flex;
       gap: 2rem;
 
@@ -570,7 +621,7 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    width: 34.6rem;
+    width: 30.3rem;
   }
 
   &__contacts {

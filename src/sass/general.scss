@@ -72,7 +72,7 @@ input {
 }
 
 .container {
-  width: 144rem;
+  width: 128rem;
   margin: 0 auto;
 }
 
@@ -222,8 +222,7 @@ input {
 
 .swiper-pagination {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .swiper-pagination-bullet {
@@ -249,10 +248,10 @@ input {
 }
 
 .input {
-  width: 37rem;
+  width: 33rem;
   background-color: $grey-light;
   color: $black;
-  padding: 1.4rem 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   border: 0;
   font-size: 1.4rem;
