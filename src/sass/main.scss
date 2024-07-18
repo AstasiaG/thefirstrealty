@@ -104,7 +104,7 @@
       }
     }
 
-    &-ready {
+    &-more {
       position: absolute;
       z-index: 5;
       bottom: 8rem;
@@ -112,10 +112,11 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.6rem 1.6rem 0.6rem 0.9rem;
+      padding: 0.6rem 1.6rem;
       border-radius: 5rem;
       background-color: $red;
       color: $white;
+      cursor: pointer;
 
       & img {
         width: 1.8rem;
@@ -713,5 +714,42 @@
 
   &.active {
     display: flex;
+  }
+
+}
+
+.modal-more {
+  &.modal {
+    .modal{
+      &__inner {
+        width: 75.5rem;
+        padding: 0;
+        display: flex;
+        overflow: hidden;
+      }
+      &__content {
+        width: 42.4rem;
+        padding: 4.6rem 4.6rem 5.4rem;
+
+        &-title {
+          margin-bottom: 3.4rem;
+        }
+        &-text {
+          margin-bottom: 2rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &-btn {
+          margin: 5.8rem 0 0 0;
+        }
+      }
+
+      &__image {
+        width: 33.1rem;
+        height: auto;
+      }
+    }
   }
 }

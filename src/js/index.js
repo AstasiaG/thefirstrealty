@@ -264,6 +264,16 @@ $(function () {
     window.scrollTo(0, scrollY);
   }
 
+  $('.projects__card-more').on("click", function () {
+    $(".modal.modal-more").addClass('active');
+    openModal();
+  })
+
+  $('.modal__content-btn').on('click', function () {
+    $(".modal.modal-more").removeClass('active');
+    closeModal();
+  })
+
   if ($(".modal__close-btn").length) {
     $(".modal__close-btn").on("click", function () {
       if ($(this).closest(".modal").hasClass("active")) {
@@ -275,11 +285,15 @@ $(function () {
 
   document.addEventListener("click", (el) => {
     if ($(".modal").hasClass("active")) {
-      const md = document.querySelector(".modal");
-      const wrap = document.querySelector(".modal__inner");
+      console.log('eeee')
+      const md = $('.modal.active')[0];
+      const wrap = $('.modal.active').find(".modal__inner")[0];
       const notWrap = el.composedPath().includes(wrap);
       const window = el.composedPath().includes(md);
+
+      console.log(md, window, wrap, notWrap)
       if (window && !notWrap) {
+        console.log('eyyyyy')
         $(".modal").removeClass("active");
         closeModal();
       }

@@ -242,6 +242,14 @@ $(function () {
     window.history.replaceState(null, null, window.location.pathname + window.location.search);
     window.scrollTo(0, scrollY);
   }
+  $('.projects__card-more').on("click", function () {
+    $(".modal.modal-more").addClass('active');
+    openModal();
+  });
+  $('.modal__content-btn').on('click', function () {
+    $(".modal.modal-more").removeClass('active');
+    closeModal();
+  });
   if ($(".modal__close-btn").length) {
     $(".modal__close-btn").on("click", function () {
       if ($(this).closest(".modal").hasClass("active")) {
@@ -252,11 +260,14 @@ $(function () {
   }
   document.addEventListener("click", function (el) {
     if ($(".modal").hasClass("active")) {
-      var md = document.querySelector(".modal");
-      var wrap = document.querySelector(".modal__inner");
+      console.log('eeee');
+      var md = $('.modal.active')[0];
+      var wrap = $('.modal.active').find(".modal__inner")[0];
       var notWrap = el.composedPath().includes(wrap);
       var _window = el.composedPath().includes(md);
+      console.log(md, _window, wrap, notWrap);
       if (_window && !notWrap) {
+        console.log('eyyyyy');
         $(".modal").removeClass("active");
         closeModal();
       }

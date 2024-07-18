@@ -436,7 +436,7 @@ input:active {
   font-weight: 400;
 }
 
-.projects__card-ready {
+.projects__card-more {
   position: absolute;
   z-index: 5;
   bottom: 8rem;
@@ -448,13 +448,14 @@ input:active {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.6rem 0.6rem 0.9rem;
+  padding: 0.6rem 1.6rem;
   border-radius: 5rem;
   background-color: #E7214D;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
-.projects__card-ready img {
+.projects__card-more img {
   width: 1.8rem;
   height: 1.8rem;
 }
@@ -1142,4 +1143,39 @@ input:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.modal-more.modal .modal__inner {
+  width: 75.5rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.modal-more.modal .modal__content {
+  width: 42.4rem;
+  padding: 4.6rem 4.6rem 5.4rem;
+}
+
+.modal-more.modal .modal__content-title {
+  margin-bottom: 3.4rem;
+}
+
+.modal-more.modal .modal__content-text {
+  margin-bottom: 2rem;
+}
+
+.modal-more.modal .modal__content-text:last-child {
+  margin-bottom: 0;
+}
+
+.modal-more.modal .modal__content-btn {
+  margin: 5.8rem 0 0 0;
+}
+
+.modal-more.modal .modal__image {
+  width: 33.1rem;
+  height: auto;
 }
