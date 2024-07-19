@@ -51,14 +51,24 @@ $(function () {
     speed: 1000
   });
   var teamSwiper = new Swiper(".team-swiper", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 1,
     loop: 'true',
     navigation: {
       nextEl: '.team-swiper__btn-next',
       prevEl: '.team-swiper__btn-prev'
     },
-    speed: 1000
+    speed: 1000,
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      468: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      }
+    }
   });
   var initCakeSwiper = function initCakeSwiper(swiperContainer) {
     return new Swiper(swiperContainer.find(".swiper")[0], {
