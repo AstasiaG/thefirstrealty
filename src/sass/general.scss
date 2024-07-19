@@ -84,7 +84,7 @@ input {
 
 @media (max-width: 48em) {
   .container {
-      padding: 0 4rem; 
+      padding: 0 1.6rem;
       width: 100%;
   }
 }
@@ -124,6 +124,12 @@ input {
 }
 
 
+@media (max-width: 48em) {
+  .title {
+    font-size: 4.4rem;
+  }
+}
+
 //buttons
 
 .btn {
@@ -142,6 +148,11 @@ input {
 
     &:hover {
       background: linear-gradient(25deg, #C20C35, $red);
+    }
+
+    & img {
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 
@@ -263,5 +274,12 @@ input {
   &.invalid {
     border: 0.1rem solid $red;
     color: $red;
+  }
+}
+
+@media (max-width: 48em) {
+  .input {
+    width: 31rem;
+    padding: 1.2rem 2rem;
   }
 }

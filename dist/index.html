@@ -9,41 +9,57 @@
 </head>
 <body>
   <header>
-    <div class="header container">
-      <div class="header__logo">
-        <img src="./assets/svg/logo.svg" alt="logo">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="./assets/svg/logo.svg" alt="logo">
+        </div>
+        <div class="header__mob">
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li class="header__menu-item">
+                <a class="link" href="#projects"">Проекты</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="link" href="#benefits">Почему</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="link" href="#about">О нас</a>
+              </li>
+              <li class="header__menu-item">
+                <a class="link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="btn link header__lang">RU</button>
+        </div>
+        <div class="header__burger">
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <nav class="header__menu">
-        <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a class="link" href="#projects"">Проекты</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="link" href="#benefits">Почему</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="link" href="#about">О нас</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="link" href="#contacts">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="btn link header__lang">RU</button>
     </div>
   </header>
   <main>
     <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__inner-content">
-          <h1 class="title">Начните свой путь с покупки недвижимости</h1>
-          <p class="text">Купите объект для жизни или инвестиций, без комиссий и непредвиденных платежей</p>
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__inner-content">
+            <h1 class="title">Начните свой путь с покупки недвижимости</h1>
+            <p class="text">Купите объект для жизни или инвестиций, без комиссий и непредвиденных платежей</p>
+          </div>
+          <aside class="messengers">
+            <p class="title-xs">Свяжитесь с нами и мы поможем вам уточнить все детали</p>
+            <button class="messengers__btn btn-primary">
+              <img src="./assets/svg/whatsapp.svg" alt="">
+              <span>Whatsapp<span>
+            </button>
+            <button class="messengers__btn btn-primary">
+              <img src="./assets/svg/tg-logo.svg" alt="">
+              <span>Telegram<span>
+            </button>
+          </aside>
         </div>
-        <aside class="messengers">
-          <p class="title-xs">Свяжитесь с нами и мы поможем вам уточнить все детали</p>
-          <button class="btn-primary">Whatsapp</button>
-          <button class="btn-primary">Telegram</button>
-        </aside>
       </div>
     </section>
 

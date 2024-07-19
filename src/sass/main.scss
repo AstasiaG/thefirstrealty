@@ -1,12 +1,23 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+  &__inner {
+    display: flex;
+    padding: 1rem 0;
+  }
 
   &__logo {
     width: 9.3rem;
     margin-right: 3rem;
+
+    & img  {
+      height: auto;
+    }
+  }
+
+  &__mob {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   &__menu{
@@ -24,11 +35,14 @@
   &__lang {
     cursor: pointer;
   }
+
+  &__burger {
+    display: none;
+  }
 }
 
 .hero {
-  background-image: url(../assets/img/hero-img.webp);
-  mask-image: linear-gradient(rgb(0 0 0 / 100%) 80%, transparent);
+  background: linear-gradient(transparent 70%, rgb(255, 255, 255, 100%)), url(../assets/img/hero-img.webp);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,6 +81,12 @@
   & .title-xs {
     margin-bottom: 1.5rem;
     text-align: center;
+  }
+
+  &__btn {
+    & img {
+      display: none;
+    }
   }
 }
 
