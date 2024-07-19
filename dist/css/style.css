@@ -42,6 +42,7 @@ html {
 body {
   font-size: 10px;
   color: #2A2A2A;
+  line-height: 1.4;
 }
 
 a {
@@ -1346,159 +1347,56 @@ input:active {
   .projects__card-pagination {
     bottom: 7.5rem;
   }
-  .projects__button {
-    margin: 4rem auto 0;
-  }
-  .apart__inner {
-    position: relative;
-    background-color: #F2EFF0;
-    border-radius: 1rem;
-    padding: 3.8rem 2.7rem;
-  }
-  .apart__content {
-    width: 27.6rem;
-    margin-bottom: 3.3rem;
-  }
-  .apart__title {
-    margin-bottom: 13.2rem;
-  }
-  .apart-swiper {
-    overflow: hidden;
-    height: 48.6rem;
-    margin-top: -30rem;
-  }
-  .apart-swiper .swiper-wrapper {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-  .apart-swiper__btn-prev {
-    top: 5.5rem;
-    left: 37%;
-  }
-  .apart-swiper__btn-next {
-    top: 5.5rem;
-    left: 42%;
-  }
-  .apart-swiper__slide {
-    width: 26.6rem;
-    height: 18.2rem;
-    -webkit-transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
-    transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
-  }
-  .apart-swiper__slide.active {
-    width: 66.5rem;
-    height: 48.6rem;
-  }
-  .apart-swiper__slide img {
-    border-radius: 1rem;
-  }
   .benefits {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(45%, transparent)), url(../assets/img/benefits.webp);
-    background-image: linear-gradient(#FFFFFF, transparent 45%), url(../assets/img/benefits.webp);
-    background-position: center center;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(45%, transparent)), url(../assets/img/benefits-mob.webp);
+    background-image: linear-gradient(#FFFFFF, transparent 45%), url(../assets/img/benefits-mob.webp);
+    background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .benefits__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    padding: 0 0 10rem 0;
-    position: relative;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0 0 9.4rem 0;
   }
   .benefits__title {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    font-family: "DaxlinePro";
-    font-size: 23rem;
-    line-height: 100%;
-    font-weight: 700;
-    background: url(../assets/img/u1.webp);
-    background-position: top 10% center;
-    background-size: cover;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 11.3rem;
+    margin-left: -1rem;
   }
   .benefits__subtitle {
-    display: block;
-    margin: 0 0 3.7rem 1.5rem;
-    font-family: "OpenSans";
-    font-size: 3.2rem;
-    color: #2A2A2A;
+    margin: 0 0 1.5rem 0;
+    font-size: 2rem;
   }
   .benefits-swiper {
-    position: relative;
-    margin-top: 7rem;
-    height: 25rem;
-    overflow: hidden;
+    margin-top: 13.5rem;
   }
-  .benefits-swiper__slide {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 41rem;
-    height: 22rem;
-  }
-  .benefits-swiper__slide-text {
-    color: #FFFFFF;
-    width: 35rem;
-  }
-  .benefits-swiper .swiper-wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .benefits .btn-prev,
-  .benefits .btn-next {
-    left: 0;
-    right: unset;
-  }
-  .benefits .btn-prev path,
-  .benefits .btn-next path {
-    fill: #FFFFFF;
-  }
-  .benefits .btn-prev {
-    top: 1.5rem;
-    bottom: unset;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
-  .benefits .btn-next {
-    top: unset;
-    bottom: 0;
-    -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
+  .residence .container {
+    padding: 0;
   }
   .residence__inner {
-    padding: 7rem 2.7rem;
-    border-radius: 1rem;
-    background-color: #F2EFF0;
+    padding: 3.6rem 1.6rem 19.7rem;
     background-image: url(../assets/img/residence.webp);
     background-size: contain;
     background-position: right bottom;
     background-repeat: no-repeat;
   }
   .residence__text {
-    width: 53rem;
-    margin-bottom: 2.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
   }
   .residence__title {
-    margin-bottom: 1.3rem;
+    margin-bottom: 1rem;
   }
   .residence__title-s {
     margin-bottom: 1.5rem;
   }
   .residence__btn {
-    margin-top: 8rem;
+    margin-top: 2.8rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 1.1rem 3.7rem;
   }
   .about__inner {
     display: -webkit-box;
