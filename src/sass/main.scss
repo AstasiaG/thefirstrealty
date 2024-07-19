@@ -99,12 +99,7 @@
 
   &__card {
     position: relative;
-    width: 100%;
     width: 41.3rem;
-
-    // &-wrapper {
-    //   width: 41.3rem;
-    // }
 
     &-count {
       position: absolute;
@@ -131,17 +126,11 @@
       right: 2.2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
       padding: 0.6rem 1.6rem;
       border-radius: 5rem;
       background-color: $red;
       color: $white;
       cursor: pointer;
-
-      & img {
-        width: 1.8rem;
-        height: 1.8rem;
-      }
     }
 
     &-swiper {

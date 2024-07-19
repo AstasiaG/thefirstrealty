@@ -96,6 +96,9 @@ input:active {
   html {
     font-size: 10px;
   }
+  section {
+    margin-bottom: 8rem;
+  }
 }
 @media (max-width: 48em) {
   .container {
@@ -446,7 +449,6 @@ input:active {
 
 .projects__card {
   position: relative;
-  width: 100%;
   width: 41.3rem;
 }
 
@@ -479,17 +481,11 @@ input:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.5rem;
   padding: 0.6rem 1.6rem;
   border-radius: 5rem;
   background-color: #E7214D;
   color: #FFFFFF;
   cursor: pointer;
-}
-
-.projects__card-more img {
-  width: 1.8rem;
-  height: 1.8rem;
 }
 
 .projects__card-swiper {
@@ -1318,111 +1314,37 @@ input:active {
   .messengers__btn span {
     display: none;
   }
-  .projects__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 2rem;
-  }
   .projects__card {
-    position: relative;
     width: 100%;
-    width: 41.3rem;
   }
   .projects__card-count {
-    position: absolute;
-    z-index: 5;
-    top: 1.4rem;
-    right: 2.2rem;
-    color: #FFFFFF;
-    width: 5.2rem;
-    font-size: 2.4rem;
-    font-weight: 700;
-  }
-  .projects__card-count span {
-    display: block;
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 400;
+    top: 0.7rem;
+    right: 0.8rem;
   }
   .projects__card-more {
-    position: absolute;
-    z-index: 5;
-    bottom: 8rem;
-    right: 2.2rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.6rem;
-    border-radius: 5rem;
-    background-color: #E7214D;
-    color: #FFFFFF;
-    cursor: pointer;
-  }
-  .projects__card-more img {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  .projects__card-swiper {
-    width: 100%;
-    overflow: hidden;
-  }
-  .projects__card .btn-next, .projects__card .btn-prev {
-    top: 40%;
-  }
-  .projects__card .btn-next path, .projects__card .btn-prev path {
-    fill: #FFFFFF;
+    bottom: 7.5rem;
+    right: 0.9rem;
+    padding: 1rem 1.6rem;
   }
   .projects__card--btn-next {
-    right: 1.3rem;
+    right: 0rem;
   }
   .projects__card--btn-prev {
-    left: 1.3rem;
+    left: 0rem;
   }
   .projects__card-slide {
-    width: 100%;
-    height: 26.5rem;
-  }
-  .projects__card-slide img {
-    border-radius: 1rem;
+    height: 24.1rem;
   }
   .projects__card-name {
-    width: 26.5rem;
+    width: 23.6rem;
     -ms-flex-item-align: center;
         align-self: center;
   }
   .projects__card-bottom {
-    padding: 1.6rem 0 0.5rem;
-  }
-  .projects__card-title, .projects__card-descr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    margin-bottom: 0.5rem;
-  }
-  .projects__card-name, .projects__card-cost, .projects__card-about {
-    text-transform: uppercase;
-  }
-  .projects__card-descr {
-    margin-bottom: 0;
-  }
-  .projects__card-about, .projects__card-sub {
-    color: #8F7D83;
+    padding: 1.2rem 0 0.9rem;
   }
   .projects__card-pagination {
-    left: 50%;
-    bottom: 8.5rem;
-    -webkit-transform: translate(-50%);
-            transform: translate(-50%);
+    bottom: 7.5rem;
   }
   .projects__button {
     margin: 4rem auto 0;
