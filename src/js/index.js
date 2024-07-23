@@ -376,7 +376,7 @@ $(function () {
         // Прокрутка вверх
         $(".btn-top").css('opacity', '1');
       }
-    } else if (st == 0) {
+    } else if (st <= 20) {
       $(".btn-top").css('opacity', '0');
     }
     lastScrollTop = st;

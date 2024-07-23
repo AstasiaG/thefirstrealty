@@ -188,14 +188,17 @@ input {
   &-top {
     position: fixed;
     z-index: 1000;
-    bottom: 4rem;
-    right: 1.6rem;
+    bottom: 9rem;
+    right: 10rem;
     width: fit-content;
     padding: 1.1rem 1.2rem 1.3rem;
+    // padding: 0;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 
     & svg {
+      width: 3rem;
+      height: 3rem;
       transform: rotate(90deg);
       & path {
         fill: $white;
@@ -310,5 +313,11 @@ input {
   .input {
     width: 100%;
     padding: 1.2rem 2rem;
+  }
+
+  .btn-top {
+    bottom: 4rem;
+    right: 1.6rem;
+    padding: 1.1rem 1.2rem 1.3rem;
   }
 }

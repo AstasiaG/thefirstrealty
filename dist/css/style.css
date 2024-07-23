@@ -202,8 +202,8 @@ input:active {
 .btn-top {
   position: fixed;
   z-index: 1000;
-  bottom: 4rem;
-  right: 1.6rem;
+  bottom: 9rem;
+  right: 10rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -214,6 +214,8 @@ input:active {
 }
 
 .btn-top svg {
+  width: 3rem;
+  height: 3rem;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -357,6 +359,11 @@ input:active {
   .input {
     width: 100%;
     padding: 1.2rem 2rem;
+  }
+  .btn-top {
+    bottom: 4rem;
+    right: 1.6rem;
+    padding: 1.1rem 1.2rem 1.3rem;
   }
 }
 .header__inner {
