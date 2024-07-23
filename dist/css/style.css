@@ -199,6 +199,29 @@ input:active {
   color: #FFFFFF;
 }
 
+.btn-top {
+  position: fixed;
+  z-index: 1000;
+  bottom: 4rem;
+  right: 1.6rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.1rem 1.2rem 1.3rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn-top svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.btn-top svg path {
+  fill: #FFFFFF;
+}
+
 .btn-prev,
 .btn-next {
   width: -webkit-fit-content;

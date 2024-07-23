@@ -325,4 +325,26 @@ $(function () {
       }
     });
   }
+
+  //btn-top
+
+  $('.btn-top').on('click', function () {
+    $(window).scrollTop(0);
+  });
+  var lastScrollTop = 0;
+  $(window).scroll(function () {
+    var st = $(this).scrollTop();
+    if (st > 60) {
+      if (st > lastScrollTop) {
+        // Прокрутка вниз
+        $(".btn-top").css('opacity', '0');
+      } else {
+        // Прокрутка вверх
+        $(".btn-top").css('opacity', '1');
+      }
+    } else if (st == 0) {
+      $(".btn-top").css('opacity', '0');
+    }
+    lastScrollTop = st;
+  });
 });

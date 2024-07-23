@@ -184,6 +184,24 @@ input {
       color: $white;
     }
   }
+
+  &-top {
+    position: fixed;
+    z-index: 1000;
+    bottom: 4rem;
+    right: 1.6rem;
+    width: fit-content;
+    padding: 1.1rem 1.2rem 1.3rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    & svg {
+      transform: rotate(90deg);
+      & path {
+        fill: $white;
+      }
+    }
+  }
 }
 
 .btn-prev,
