@@ -20,7 +20,6 @@ $grey-dark: rgba(42, 42, 42, 0.7);
 
 html {
   font-family: "OpenSans";
-  // font-size: 62.5%;
   font-size: 0.5208335vw;
   font-style: normal;
   font-weight: normal;
@@ -28,7 +27,6 @@ html {
 }
 
 body {
-  // font-size: 10px;
   color: $black;
   line-height: 1.4;
 }
@@ -87,30 +85,11 @@ input {
   margin: 0 auto;
 }
 
-// @media (min-width: 1920px) {
-//   // html {
-//   //     font-size: 10px;
-//   // }
-//   html {
-//     font-size: 5px;
-//     font-size: 1.5625vw;
-//     font-size: calc((100 / 375) * 5vw); // где 375 это ширина моб версии макета
-//     -webkit-text-size-adjust: none;
-//   }
-
-//   body {
-//     -webkit-text-size-adjust: none;
-//   }
-// }
-
 @media (max-width: 48em) {
   html {
     font-size: 2.66667vw;
-    // font-size: 1.5625vw;
-    // font-size: calc((100 / 375) * 5vw); // где 375 это ширина моб версии макета
-    // -webkit-text-size-adjust: none;
   }
-  
+
   section {
     margin-bottom: 8rem;
   }

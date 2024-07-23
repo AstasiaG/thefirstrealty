@@ -2,13 +2,6 @@ $(function () {
 
   //sliders
 
-  // const serviceThumbs = new Swiper(".apart-thumbs", {
-  //   slidesPerView: 2,
-  //   spaceBetween: 16,
-  //   loop: 'true',
-  //   speed: 1000,
-  // })
-
   const serviceSwiper = new Swiper(".apart-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 15,
@@ -20,11 +13,13 @@ $(function () {
     speed: 500,
     on: {
       slideChange: function (swiper) {
-        let activeId = swiper.activeIndex;
-        let pseudoActive = swiper.slides[activeId + 2];
-
-        $('.apart-swiper__slide').removeClass('active');
-        pseudoActive.classList.add('active');
+        if ($(window).width() > 768) {
+          let activeId = swiper.activeIndex;
+          let pseudoActive = swiper.slides[activeId + 2];
+  
+          $('.apart-swiper__slide').removeClass('active');
+          pseudoActive.classList.add('active');
+        }
 
       }
     },
@@ -75,10 +70,6 @@ $(function () {
     },
     speed: 1000,
     breakpoints: {
-      // 1020: {
-      //   slidesPerView: 3,
-      //   spaceBetween: 20,
-      // },
       768: {
         slidesPerView: 3,
         spaceBetween: 20,

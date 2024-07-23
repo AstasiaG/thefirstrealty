@@ -44,6 +44,7 @@
     }
   
     &__menu{
+      width: 100%;
       margin-bottom: 12.7rem;
 
       &-list {
@@ -53,11 +54,16 @@
       }
   
       &-item {
-        padding: 2.1rem 1.8rem;
-        border-bottom: 0.1rem solid $grey-light;
 
-        &:last-child {
-          border-bottom: 0;
+        & a {
+          display: inline-block;
+          width: 100%;
+          padding: 2.1rem 1.8rem;
+          border-bottom: 0.1rem solid #F2EFF0;
+
+          &:last-child {
+            border-bottom: 0;
+          }
         }
       }
     }
@@ -218,6 +224,10 @@
       margin-bottom: 1.2rem;
     }
 
+    &__text {
+      width: 95%;
+    }
+
     &-thumbs {
       display: block;
       width: 100%;
@@ -259,8 +269,7 @@
       &__slide {
         width: 100%;
         height: 26.7rem;
-        // transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
-    
+
         &.active {
           width: 100%;
           height: 26.7rem;
@@ -406,7 +415,7 @@
   
       &__slide {
         width: 100%;
-        height: 27.2rem;
+        height: 32.2rem;
   
         & img {
           object-position: 0 -25px;
