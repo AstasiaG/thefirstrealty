@@ -2,6 +2,7 @@
   .header {
 
     &__inner {
+      position: relative;
       padding: 1.3rem 0;
       justify-content: space-between;
       align-items: center;
@@ -13,19 +14,57 @@
     }
 
     &__mob {
-      display: none;
+      top: 6.2rem;
+      right: -1.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 27.1rem;
+      background-color: $white;
+      padding-bottom: 2.6rem;
+      border-radius: 0 0 0 1rem;
+
+      &-wrapper {
+        position: fixed;
+        top: 6.2rem;
+        left: 0;
+        z-index: 100;
+        display: none;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        width: 100%;
+        height: 100vh;
+        background-color: $grey-dark;
+
+        &.active {
+          display: flex;
+        }
+      }
     }
   
     &__menu{
+      margin-bottom: 12.7rem;
+
       &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
       }
   
       &-item {
+        padding: 2.1rem 1.8rem;
+        border-bottom: 0.1rem solid $grey-light;
+
+        &:last-child {
+          border-bottom: 0;
+        }
       }
     }
   
     &__lang {
-      display: none;
+      display: block;
+      padding-right: 1.6rem;
     }
 
     &__burger {
@@ -160,59 +199,75 @@
   }
   
   
-  // .apart {
+  .apart {
+
+    .container {
+      padding: 0;
+    }
   
-  //   &__inner {
-  //     position: relative;
-  //     background-color: $grey-light;
-  //     border-radius: 1rem;
-  //     padding: 3.8rem 2.7rem;
-  //   }
+    &__inner {
+      padding: 3.3rem 1.6rem 7rem;
+    }
   
-  //   &__content {
-  //     width: 27.6rem;
-  //     margin-bottom: 3.3rem;
-  //   }
+    &__content {
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
   
-  //   &__title {
-  //     margin-bottom: 13.2rem;
-  //   }
+    &__title {
+      margin-bottom: 1.2rem;
+    }
+
+    &-thumbs {
+      display: block;
+      width: 100%;
+      height: 12.5rem;
+      overflow: hidden;
+
+      &__slide {
+        width: 16.4rem;
+        height: 100%;
+
+        &.swiper-slide-active {
+          display: none;
+        }
+      }
+    }
   
-  //   &-swiper {
-  //     overflow: hidden;
-  //     height: 48.6rem;
-  //     margin-top: -30rem;
+    &-swiper {
+      overflow: hidden;
+      height: 26.7rem;
+      margin-top: 1.6rem;
   
-  //     & .swiper-wrapper {
-  //       align-items: flex-end;
-  //     }
+      & .swiper-wrapper {
+        align-items: flex-end;
+      }
   
-  //     &__btn-prev {
-  //       top: 5.5rem;
-  //       left: 37%;
-  //     }
+      &__btn-prev {
+        top: unset;
+        bottom: 1.5rem;
+        left: 1rem;
+      }
       
-  //     &__btn-next {
-  //       top: 5.5rem;
-  //       left: 42%;
-  //     }
+      &__btn-next {
+        top: unset;
+        bottom: 1.5rem;
+        left: unset;
+        right: 1rem;
+      }
   
-  //     &__slide {
-  //       width: 26.6rem;
-  //       height: 18.2rem;
-  //       transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
+      &__slide {
+        width: 100%;
+        height: 26.7rem;
+        // transition: width 0.2s ease-out 0.1s, height 0.3s ease-in-out;
     
-  //       &.active {
-  //         width: 66.5rem;
-  //         height: 48.6rem;
-  //       }
-    
-  //       & img {
-  //         border-radius: 1rem;
-  //       }
-  //     }
-  //   }
-  // }
+        &.active {
+          width: 100%;
+          height: 26.7rem;
+        }
+      }
+    }
+  }
   
   .benefits {
     background-image: linear-gradient($white, transparent 45%), url(../assets/img/benefits-mob.webp);
@@ -377,6 +432,11 @@
         &-links {
           flex-direction: row;
           gap: 2rem;
+
+          & svg {
+            width: 3rem;
+            height: 3rem;
+          }
         }
       }
   

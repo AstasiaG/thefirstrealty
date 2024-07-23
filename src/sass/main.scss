@@ -18,6 +18,11 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
+    &-wrapper {
+      width: 100%;
+      margin: auto;
+    }
   }
 
   &__menu{
@@ -94,6 +99,7 @@
   &__inner {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
   }
 
@@ -225,10 +231,14 @@
     margin-bottom: 13.2rem;
   }
 
+  &-thumbs {
+    display: none;
+  }
+
   &-swiper {
     overflow: hidden;
     height: 48.6rem;
-    margin-top: -30rem;
+    margin-top: -31.5rem;
 
     & .swiper-wrapper {
       align-items: flex-end;

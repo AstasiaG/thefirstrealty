@@ -7,6 +7,13 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 $(function () {
   //sliders
 
+  // const serviceThumbs = new Swiper(".apart-thumbs", {
+  //   slidesPerView: 2,
+  //   spaceBetween: 16,
+  //   loop: 'true',
+  //   speed: 1000,
+  // })
+
   var serviceSwiper = new Swiper(".apart-swiper", {
     slidesPerView: 'auto',
     spaceBetween: 15,
@@ -22,6 +29,14 @@ $(function () {
         var pseudoActive = swiper.slides[activeId + 2];
         $('.apart-swiper__slide').removeClass('active');
         pseudoActive.classList.add('active');
+      }
+    },
+    breakpoints: {
+      320: {
+        navigation: {
+          nextEl: '.apart-swiper__btn-next',
+          prevEl: '.apart-swiper__btn-prev'
+        }
       }
     }
   });
@@ -60,12 +75,12 @@ $(function () {
     },
     speed: 1000,
     breakpoints: {
+      // 1020: {
+      //   slidesPerView: 3,
+      //   spaceBetween: 20,
+      // },
       768: {
         slidesPerView: 3,
-        spaceBetween: 20
-      },
-      468: {
-        slidesPerView: 2,
         spaceBetween: 20
       }
     }
@@ -92,8 +107,13 @@ $(function () {
 
   //cards
 
-  $('.projects__card:nth-child(n + 10)').addClass('hidden');
-  $('.projects__card:nth-child(n + 10)').hide();
+  if ($(window).width() > 768) {
+    $('.projects__card:nth-child(n + 10)').addClass('hidden');
+    $('.projects__card:nth-child(n + 10)').hide();
+  } else {
+    $('.projects__card:nth-child(n + 7)').addClass('hidden');
+    $('.projects__card:nth-child(n + 7)').hide();
+  }
   $('.projects__button').on('click', function () {
     var hiddenCards = $(".projects__card.hidden");
     if ($(".projects__card.hidden").length !== 0) {
@@ -104,8 +124,13 @@ $(function () {
         }
       }
     } else {
-      $('.projects__card:nth-child(n + 10)').addClass('hidden');
-      $('.projects__card:nth-child(n + 10)').slideUp();
+      if ($(window).width() > 768) {
+        $('.projects__card:nth-child(n + 10)').addClass('hidden');
+        $('.projects__card:nth-child(n + 10)').slideUp();
+      } else {
+        $('.projects__card:nth-child(n + 7)').addClass('hidden');
+        $('.projects__card:nth-child(n + 7)').hide();
+      }
       $(this).html('Показать еще');
     }
     if ($(".projects__card.hidden").length === 0) {
@@ -291,4 +316,22 @@ $(function () {
       $(this).text("RU");
     }
   });
+  if ($(window).width() < 768) {
+    $('.header__menu-item').on('click', function () {
+      $('.header__burger').removeClass('active');
+      $('.header__mob-wrapper').removeClass('active');
+      closeModal();
+    });
+    $('.header__burger').on('click', function () {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $('.header__mob-wrapper').removeClass('active');
+        closeModal();
+      } else {
+        $(this).addClass('active');
+        $('.header__mob-wrapper').addClass('active');
+        openModal();
+      }
+    });
+  }
 });
