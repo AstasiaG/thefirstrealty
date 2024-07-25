@@ -131,81 +131,82 @@ $(function () {
 
   //validation
 
-  var form = document.querySelector('.form');
-  var name = document.querySelector('.form__input--name');
-  var phone = document.querySelector('.form__input--tel');
-  var contactType = document.querySelector('.form__input--type');
-  var nameError = document.querySelector(".form__input--name + span.error__text");
-  var phoneError = document.querySelector(".form__input--tel + span.error__text");
-  var typeError = document.querySelector(".form__input--type + span.error__text");
-  name.addEventListener("input", function (event) {
-    if (name.validity.valid) {
-      nameError.innerText = "";
-      nameError.className = "error__text";
-      name.classList.remove("invalid");
-    } else {
-      if (name.validity.valueMissing) {
+  if ($('.form').length != 0) {
+    var form = document.querySelector('.form');
+    var name = document.querySelector('.form__input--name');
+    var phone = document.querySelector('.form__input--tel');
+    var contactType = document.querySelector('.form__input--type');
+    var nameError = document.querySelector(".form__input--name + span.error__text");
+    var phoneError = document.querySelector(".form__input--tel + span.error__text");
+    var typeError = document.querySelector(".form__input--type + span.error__text");
+    name.addEventListener("input", function (event) {
+      if (name.validity.valid) {
+        nameError.innerText = "";
+        nameError.className = "error__text";
+        name.classList.remove("invalid");
+      } else {
+        if (name.validity.valueMissing) {
+          nameError.className = "error__text active";
+          name.classList.add("invalid");
+        }
         nameError.className = "error__text active";
+        typeError.textContent = "Некорректные данные";
         name.classList.add("invalid");
       }
-      nameError.className = "error__text active";
-      typeError.textContent = "Некорректные данные";
-      name.classList.add("invalid");
-    }
-  });
-  contactType.addEventListener("input", function (event) {
-    if (contactType.validity.valid) {
-      typeError.textContent = "";
-      typeError.className = "error__text";
-      contactType.classList.remove("invalid");
-    } else {
-      if (contactType.validity.valueMissing) {
+    });
+    contactType.addEventListener("input", function (event) {
+      if (contactType.validity.valid) {
+        typeError.textContent = "";
+        typeError.className = "error__text";
+        contactType.classList.remove("invalid");
+      } else {
+        if (contactType.validity.valueMissing) {
+          typeError.className = "error__text active";
+          contactType.classList.add("invalid");
+        }
         typeError.className = "error__text active";
         contactType.classList.add("invalid");
       }
-      typeError.className = "error__text active";
-      contactType.classList.add("invalid");
-    }
-  });
-  $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
-    "onincomplete": function onincomplete() {
-      phoneError.className = "error__text active";
-      phone.classList.add("invalid");
-    },
-    "oncomplete": function oncomplete() {
-      phoneError.className = "error__text";
-      phone.classList.remove("invalid");
-    }
-  });
-  console.log($('.form .btn-primary'));
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "") {
-      if (name.value === "") {
-        name.classList.add("invalid");
-        nameError.textContent = "Заполните поле";
-        nameError.className = "error__text active";
-      }
-      if (phone.value === "") {
-        phone.classList.add("invalid");
-        phoneError.textContent = "Заполните поле";
+    });
+    $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
+      "onincomplete": function onincomplete() {
         phoneError.className = "error__text active";
+        phone.classList.add("invalid");
+      },
+      "oncomplete": function oncomplete() {
+        phoneError.className = "error__text";
+        phone.classList.remove("invalid");
       }
-      if (contactType.value === "") {
-        contactType.classList.add("invalid");
-        typeError.textContent = "Заполните поле";
-        typeError.className = "error__text active";
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "") {
+        if (name.value === "") {
+          name.classList.add("invalid");
+          nameError.textContent = "Заполните поле";
+          nameError.className = "error__text active";
+        }
+        if (phone.value === "") {
+          phone.classList.add("invalid");
+          phoneError.textContent = "Заполните поле";
+          phoneError.className = "error__text active";
+        }
+        if (contactType.value === "") {
+          contactType.classList.add("invalid");
+          typeError.textContent = "Заполните поле";
+          typeError.className = "error__text active";
+        }
+        return;
+      } else {
+        $.ajax();
+        name.value = "";
+        phone.value = "";
+        contactType.value = "";
+        $(".modal.modal-success").addClass("active");
+        openModal();
       }
-      return;
-    } else {
-      $.ajax();
-      name.value = "";
-      phone.value = "";
-      contactType.value = "";
-      $(".modal.modal-success").addClass("active");
-      openModal();
-    }
-  });
+    });
+  }
 
   //map
 

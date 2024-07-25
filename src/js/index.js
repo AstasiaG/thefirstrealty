@@ -139,6 +139,8 @@ $(function () {
 
   //validation
 
+  if ($('.form').length != 0) {
+
     const form = document.querySelector('.form');
     const name = document.querySelector('.form__input--name');
     const phone = document.querySelector('.form__input--tel');
@@ -178,22 +180,21 @@ $(function () {
       }
     });
   
-  $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
-    "onincomplete": function () {
-      phoneError.className = "error__text active";
-      phone.classList.add("invalid");
-    },
-    "oncomplete": function () {
-      phoneError.className = "error__text";
-      phone.classList.remove("invalid");
-    }
-  });
-  console.log($('.form .btn-primary'))
+    $('.form__input--tel').inputmask('+7 (999) 999-99-99', {
+      "onincomplete": function () {
+        phoneError.className = "error__text active";
+        phone.classList.add("invalid");
+      },
+      "oncomplete": function () {
+        phoneError.className = "error__text";
+        phone.classList.remove("invalid");
+      }
+    });
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "" ) {
+      if (name.value == "" && phone.value == "" && contactType.value == "" || contactType.value == "" || phone.value == "" || name.value == "") {
         if (name.value === "") {
           name.classList.add("invalid");
           nameError.textContent = "Заполните поле";
@@ -221,7 +222,7 @@ $(function () {
       }
 
     });
-
+  }
 
   //map
 
